@@ -11,7 +11,7 @@ import { alertError } from "../ActionsTypes/ActiontypeError";
 export const Login_action = (data, Navigate) => async (dispatch) => {
   try {
     await axios
-      .post("/api/user/login", data)
+      .post("/api/login", data)
       .then((res) => dispatch({ type: LOGIN, payload: res.data }));
     Navigate("/dashboard");
   } catch (error) {

@@ -4,7 +4,7 @@ import { GETCAISSEEVENT } from "../ActionsTypes/CaisseEvent_action_type";
 export const getCaissesEvent = () => async (dispatch) => {
   try {
     await axios
-      .get("http://localhost:8000/caisseEvent/get")
+      .get("/api/caisseEvent/get")
       .then((res) =>
         dispatch({ type: GETCAISSEEVENT, payload: res.data.allCaisses })
       );
@@ -15,7 +15,7 @@ export const getCaissesEvent = () => async (dispatch) => {
 
 export const updateCaisseEvent = (id, data) => async (dispatch) => {
   try {
-    await axios.put(`http://localhost:8000/caisseEvent/update/${id}`, data);
+    await axios.put(`/api/caisseEvent/update/${id}`, data);
     dispatch(getCaissesEvent());
   } catch (error) {
     console.log(error);

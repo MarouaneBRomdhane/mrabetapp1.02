@@ -4,7 +4,7 @@ import { GETPRODUCT } from "../ActionsTypes/Achat_action_type";
 export const getProducts = () => async (dispatch) => {
   try {
     await axios
-      .get("http://localhost:8000/achat/get")
+      .get("/api/achat/get")
       .then((res) =>
         dispatch({ type: GETPRODUCT, payload: res.data.allProducts })
       );
@@ -16,7 +16,7 @@ export const getProducts = () => async (dispatch) => {
 export const addProducts = (data) => async (dispatch) => {
   try {
     await axios
-      .post("http://localhost:8000/achat/create", data)
+      .post("/api/achat/create", data)
       .then((res) => dispatch(getProducts()));
   } catch (error) {
     console.log(error);
@@ -25,7 +25,7 @@ export const addProducts = (data) => async (dispatch) => {
 
 export const updateProducts = (id, data) => async (dispatch) => {
   try {
-    await axios.put(`http://localhost:8000/caisse/update/${id}`, data);
+    await axios.put(`/api/achat/update/${id}`, data);
     dispatch(getProducts());
   } catch (error) {
     console.log(error);

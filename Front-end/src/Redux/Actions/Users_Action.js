@@ -34,14 +34,14 @@ export const getCurrent = () => async (dispatch) => {
   };
   try {
     await axios
-      .get("http://193.70.39.229:8000/user/getCurrentUser", config)
+      .get("/api/user/getCurrentUser", config)
       .then((res) => dispatch({ type: GETCURRENT, payload: res.data }));
   } catch (error) {}
 };
 
 export const getUsers = () => async (dispatch) => {
   try {
-    const res = await axios.get("http://193.70.39.229:8000/user/get");
+    const res = await axios.get("/api/user/get");
     dispatch({ type: GETUSERS, payload: res.data });
   } catch (error) {
     console.log(error);
@@ -50,7 +50,7 @@ export const getUsers = () => async (dispatch) => {
 
 export const updateUser = (id, data) => async (dispatch) => {
   try {
-    await axios.put(" http://localhost:8000/user/update/" + id, data);
+    await axios.put("/api/user/update/" + id, data);
     dispatch(getUsers());
     dispatch(getCurrent());
   } catch (error) {

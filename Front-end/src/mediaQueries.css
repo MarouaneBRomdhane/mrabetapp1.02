@@ -1,0 +1,183 @@
+/*
+
+
+@media only screen and (max-width: 768px) {
+  .NavBar-BackGround {
+    flex-direction: column;
+  }
+
+  .NavBar-BackGround .nav-links {
+    width: 100%;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .NavBar-BackGround .logo {
+    order: -1;
+    width: 100%;
+  }
+
+  .NavBar-BackGround .actions {
+    width: 100%;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .NavBar-BackGround .nav-links {
+    width: 40%;
+  }
+
+  .NavBar-BackGround .logo {
+    width: 20%;
+    text-align: center;
+  }
+
+  .NavBar-BackGround .actions {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .NavBar-BackGround {
+    gap: 1%;
+  }
+
+  .NavBar-BackGround .nav-links {
+    width: 30%;
+  }
+
+  .NavBar-BackGround .logo {
+    width: 20%;
+    text-align: center;
+  }
+
+  .NavBar-BackGround .actions {
+    width: 30%;
+    text-align: right;
+  }
+}
+
+@media (max-width: 768px) {
+  .Card {
+    width: 45%;
+    margin: 5px;
+  }
+  .Card a {
+    font-size: 20px;
+  }
+  .Card h1 {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .Card {
+    width: 45%;
+    margin: 5px;
+  }
+  .Card a {
+    font-size: 22px;
+  }
+  .Card h1 {
+    font-size: 22px;
+  }
+  .platcardtext a {
+    font-size: 25px !important;
+  }
+}
+
+@media only screen and (max-width: 435px) {
+  .Card {
+    width: 50px !important;
+    margin: 5px auto;
+  }
+  .Card h1 {
+    font-size: 18px;
+  }
+  .Card a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .divMta3lesProduit {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .textmt3lesproduit {
+    display: block !important;
+    font-size: smaller !important;
+  }
+  .listedesachats {
+    font-size: 25px !important;
+  }
+}
+
+@media (max-width: 435px) {
+  .divtextmta3lesproduit h1 {
+    font-size: 10px;
+    justify-content: center !important;
+  }
+  .textmt3lesproduit {
+    justify-content: center !important;
+  }
+  .listedesachats {
+    font-size: 22px !important;
+  }
+}
+
+@media screen and (max-width: 435px) {
+  .inputgrouphistory {
+    width: 200px !important;
+  }
+  .navbar-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar-message h1 {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  .card-container {
+    width: 100%;
+  }
+  .card-title {
+    font-size: 12px !important;
+  }
+  .card-title h3 {
+    font-size: 12px !important;
+  }
+  .card-title2 {
+    font-size: 17px !important;
+  }
+  .userlist p {
+    font-size: 15px !important;
+  }
+  .userlist h6 {
+    font-size: 12px !important;
+  }
+  .card-text {
+    font-size: 12px !important;
+  }
+  .card {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+  .modal-body {
+    padding: 10px !important;
+  }
+}
+*/

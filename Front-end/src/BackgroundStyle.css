@@ -1,0 +1,18 @@
+body {
+  background: url("./Media/background.jpg");
+  background-size: 100% 100%; /* Adjust as needed */
+  background-position: center; /* Adjust as needed */
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+  background-attachment: fixed;
+}
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}

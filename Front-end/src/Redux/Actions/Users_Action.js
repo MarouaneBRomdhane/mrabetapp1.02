@@ -11,7 +11,7 @@ import { alertError } from "../ActionsTypes/ActiontypeError";
 export const Login_action = (data, Navigate) => async (dispatch) => {
   try {
     await axios
-      .post("http://localhost:8000/user/login", data)
+      .post("http://193.70.39.229:8000/user/login", data)
       .then((res) => dispatch({ type: LOGIN, payload: res.data }));
     Navigate("/dashboard");
   } catch (error) {
@@ -34,14 +34,14 @@ export const getCurrent = () => async (dispatch) => {
   };
   try {
     await axios
-      .get("http://localhost:8000/user/getCurrentUser", config)
+      .get("http://193.70.39.229:8000/user/getCurrentUser", config)
       .then((res) => dispatch({ type: GETCURRENT, payload: res.data }));
   } catch (error) {}
 };
 
 export const getUsers = () => async (dispatch) => {
   try {
-    const res = await axios.get("http://localhost:8000/user/get");
+    const res = await axios.get("http://193.70.39.229:8000/user/get");
     dispatch({ type: GETUSERS, payload: res.data });
   } catch (error) {
     console.log(error);

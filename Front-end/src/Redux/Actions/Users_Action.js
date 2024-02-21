@@ -12,9 +12,10 @@ export const Login_action = (data, Navigate) => async (dispatch) => {
   try {
     await axios
       .post("/api/login", data)
-      .then((res) => dispatch({ type: LOGIN, payload: res.data }));
+      .then((res) => {console.log("loginResponse",res.data); dispatch({ type: LOGIN, payload: res.data })});
     Navigate("/dashboard");
   } catch (error) {
+    console.error("Login error:", error); 
     error.response.data.errors.forEach((e) => {
       dispatch(alertError(e.msg));
     });

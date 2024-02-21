@@ -22,7 +22,7 @@ Connectdb();
 app.use(express.json({ limit: "10mb" }));
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "*",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   })
 );

@@ -20,12 +20,7 @@ const Users = require("./Models/Users_model");
 
 Connectdb();
 app.use(express.json({ limit: "10mb" }));
-app.use(
-  cors({
-    origin: "*",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  })
-);
+app.use(cors());
 app.use("/api/user", UserRouter);
 app.use("/api/caisse", CaisseRouter);
 app.use("/api/caisseEvent", CaisseEventRouter);
@@ -122,3 +117,11 @@ const addHistory = async () => {
 setInterval(addHistory, 10000);
 
 app.listen(port, console.log("Server is runing at port 8000"));
+
+
+// app.use(
+//   cors({
+//     origin: "*",
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//   })
+// );

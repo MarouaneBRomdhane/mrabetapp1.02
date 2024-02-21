@@ -26,13 +26,13 @@ app.use(
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   })
 );
-app.use("/user", UserRouter);
-app.use("/caisse", CaisseRouter);
-app.use("/caisseEvent", CaisseEventRouter);
-app.use("/achat", ProductstRouter);
-app.use("/bank", BankCaisseRouter);
-app.use("/liquide", LiquideDisponibleRouter);
-app.use("/history", HistoryRouter);
+app.use("/api/user", UserRouter);
+app.use("/api/caisse", CaisseRouter);
+app.use("/api/caisseEvent", CaisseEventRouter);
+app.use("/api/achat", ProductstRouter);
+app.use("/api/bank", BankCaisseRouter);
+app.use("/api/liquide", LiquideDisponibleRouter);
+app.use("/api/history", HistoryRouter);
 
 const dispatchHistory = new Date().getHours();
 const currentDay = new Date().getDay();

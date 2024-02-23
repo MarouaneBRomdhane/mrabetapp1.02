@@ -45,13 +45,14 @@ function Caisse1(caisse) {
             className="Card rounded-lg shadow-md "
           >
             <Card.Body>
-              <Card.Title  style={{
+              <Card.Title
+                style={{
                   color: "#FFF7D6",
                   textAlign: "center",
                   fontSize: "40px",
                   fontWeight: "700",
                 }}
->
+              >
                 {caisse.Title}
               </Card.Title>
               <div className="flex">
@@ -128,7 +129,9 @@ function Caisse1(caisse) {
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
-              {user.Role === "User" ? null : <Modal1 caisse={caisse} />}
+              {user.Role === "Patron" || user.Role === "finance" ? (
+                <Modal1 caisse={caisse} />
+              ) : null}
             </Card.Body>
           </Card>
         ))}

@@ -109,7 +109,13 @@ function Economa() {
                   <br />
                   Total: {totalSum}
                 </Card.Title>
-                {user.Role === "User" ? null : <AddProduct />}
+
+                {user.Role === "Patron" ||
+                user.Role === "finance" ||
+                user.Role === "gerant" ||
+                user.Role === "achat" ? (
+                  <AddProduct />
+                ) : null}
                 <div className="achatliste" style={{ marginTop: "25px" }}>
                   {products.map((product) => (
                     <EconomaProduct product={product} key={product._id} />
@@ -134,7 +140,6 @@ function Economa() {
                       height: "100%",
                       borderRadius: "10px",
                     }}
-                    
                   />
                   <Carousel.Caption>
                     <h3>{product.Name}</h3>

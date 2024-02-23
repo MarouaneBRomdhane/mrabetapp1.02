@@ -34,7 +34,7 @@ const currentDay = new Date().getDay();
 console.log(currentDay);
 
 const addHistory = async () => {
-  if (dispatchHistory === 15) {
+  if (dispatchHistory === 23) {
     console.log(dispatchHistory);
     const caisse1 = await Caisses.find();
     const caisseEvent = await CaissesEvent.findById("65b27573340ca3038c4836ef");
@@ -117,7 +117,6 @@ const addHistory = async () => {
 setInterval(addHistory, 10000);
 
 app.listen(port, console.log("Server is runing at port 8000"));
-
 
 // app.use(
 //   cors({

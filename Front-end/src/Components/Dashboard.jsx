@@ -492,7 +492,7 @@ const Dashboard = () => {
                             className="checkbox"
                             type="checkbox"
                             defaultChecked={selectedUser.isAbscent}
-                            // disabled={selectedUser.isAbscent || currentHrs === 0}
+                            disabled={selectedUser.isAbscent || currentHrs < 12}
                             onClick={() => {
                               handleShow(selectedUser);
                             }}

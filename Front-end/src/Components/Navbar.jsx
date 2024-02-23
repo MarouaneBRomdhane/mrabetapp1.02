@@ -280,93 +280,81 @@ export default function Navbar() {
         }}
       >
         {" "}
-        {user.Role === "Patron" ||
-        user.Role === "finance" ||
-        user.Role === "gerant" ? (
-          <div className=" hover:text-white   py-2   mt-2.5 ">
-            {window.location.pathname === "/Caisses1" ? (
-              <Link
-                to="/Caisses1"
-                style={{
-                  textDecoration: "none",
-                  transition: "all 500ms",
-                  color: "hwb(41 21% 27%)",
-                  fontWeight: "700",
-                }}
-              >
-                {" "}
-                <h6>Caisses</h6>
-              </Link>
-            ) : (
-              <Link
-                to="/Caisses1"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                {" "}
-                <h6 id="navbar-text">Caisses</h6>
-              </Link>
-            )}
-          </div>
-        ) : null}
-        {user.Role === "Patron" ||
-        user.Role === "finance" ||
-        user.Role === "gerant" ||
-        user.Role === "achat" ? (
-          <div className=" hover:text-white rounded-md px-3 py-2  mt-2.5 ">
-            {window.location.pathname === "/Economa" ? (
-              <Link
-                to="/Economa"
-                style={{
-                  textDecoration: "none",
-                  transition: "all 500ms",
-                  color: "hwb(41 21% 27%)",
-                  fontSize: "20px",
-                }}
-              >
-                {" "}
-                <h6>Dépenses</h6>
-              </Link>
-            ) : (
-              <Link
-                to="/Economa"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                {" "}
-                <h6 id="navbar-text">Dépenses</h6>
-              </Link>
-            )}
-          </div>
-        ) : null}
-        {user.Role === "Patron" ||
-        user.Role === "finance" ||
-        user.Role === "gerant" ? (
-          <div className=" hover:text-white rounded-md  py-2 l  mt-2.5 ml-0">
-            {window.location.pathname === "/history" ? (
-              <Link
-                to="/history"
-                style={{
-                  textDecoration: "none",
-                  transition: "all 500ms",
-                  color: "hwb(41 21% 27%)",
-                  fontWeight: "700",
-                }}
-              >
-                {" "}
-                <h6>Historique</h6>
-              </Link>
-            ) : (
-              <Link
-                to="/history"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                {" "}
-                <h6 id="navbar-text">Historique</h6>
-              </Link>
-            )}
-          </div>
-        ) : null}
+        <div className=" hover:text-white   py-2   mt-2.5 ">
+          {window.location.pathname === "/Caisses1" ? (
+            <Link
+              to="/Caisses1"
+              style={{
+                textDecoration: "none",
+                transition: "all 500ms",
+                color: "hwb(41 21% 27%)",
+                fontWeight: "700",
+              }}
+            >
+              {" "}
+              <h6>Caisses</h6>
+            </Link>
+          ) : (
+            <Link
+              to="/Caisses1"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              {" "}
+              <h6 id="navbar-text">Caisses</h6>
+            </Link>
+          )}
+        </div>
+        <div className=" hover:text-white rounded-md px-3 py-2  mt-2.5 ">
+          {window.location.pathname === "/Economa" ? (
+            <Link
+              to="/Economa"
+              style={{
+                textDecoration: "none",
+                transition: "all 500ms",
+                color: "hwb(41 21% 27%)",
+                fontSize: "20px",
+              }}
+            >
+              {" "}
+              <h6>Dépenses</h6>
+            </Link>
+          ) : (
+            <Link
+              to="/Economa"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              {" "}
+              <h6 id="navbar-text">Dépenses</h6>
+            </Link>
+          )}
+        </div>
+        <div className=" hover:text-white rounded-md  py-2 l  mt-2.5 ml-0">
+          {window.location.pathname === "/history" ? (
+            <Link
+              to="/history"
+              style={{
+                textDecoration: "none",
+                transition: "all 500ms",
+                color: "hwb(41 21% 27%)",
+                fontWeight: "700",
+              }}
+            >
+              {" "}
+              <h6>Historique</h6>
+            </Link>
+          ) : (
+            <Link
+              to="/history"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              {" "}
+              <h6 id="navbar-text">Historique</h6>
+            </Link>
+          )}
+        </div>
       </div>
       <div
+      className="mrabet-logo"
         style={{
           justifyContent: "center",
           gap: "1%",
@@ -387,7 +375,7 @@ export default function Navbar() {
           paddingLeft: "16%",
         }}
       >
-        <Menu as="div" className="  relative  mr-0 flex  ">
+        <Menu as="div" className=" logoutImpr relative  mr-0 flex  ">
           <a
             style={{
               textDecoration: "none",
@@ -399,11 +387,7 @@ export default function Navbar() {
             className=" block px-4 py-2 text-sm  mt-2.5"
           >
             <h4>
-              {user.Role === "Patron" ||
-              user.Role === "finance" ||
-              user.Role === "gerant" ? (
-                <ImPrinter onClick={handlePrint} />
-              ) : null}
+              <ImPrinter onClick={handlePrint} />
             </h4>
           </a>
           <a

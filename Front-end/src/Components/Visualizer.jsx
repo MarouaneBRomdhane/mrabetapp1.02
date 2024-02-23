@@ -157,6 +157,7 @@ function Visualizer() {
       >
         <Card.Body>
           <Card.Title
+          className="visualiser-title"
             style={{
               display: "flex",
               justifyContent: "center",
@@ -197,6 +198,7 @@ function Visualizer() {
       >
         <Card.Body>
           <Card.Title
+          className="visualiser-title"
             style={{
               display: "flex",
               textAlign: "center",
@@ -218,7 +220,7 @@ function Visualizer() {
             }}
           >
             {" "}
-            <h1 id="liquideDisponibleValue">{Liquide[0]?.LiquideDisponible}</h1>
+            <h1 id="totalRecetteValue">{Liquide[0]?.LiquideDisponible}</h1>
           </Card.Text>
         </Card.Body>
       </Card>
@@ -237,6 +239,7 @@ function Visualizer() {
       >
         <Card.Body>
           <Card.Title
+          className="visualiser-title"
             style={{
               display: "flex",
               justifyContent: "center",
@@ -258,7 +261,7 @@ function Visualizer() {
             }}
           >
             {" "}
-            <h1 id="totalChequesValue">{TotalCheques}</h1>
+            <h1 id="totalRecetteValue">{TotalCheques}</h1>
           </Card.Text>
         </Card.Body>
       </Card>
@@ -273,10 +276,11 @@ function Visualizer() {
           height: "150px",
           marginBottom: "20px",
         }}
-        className="Card"
+        // className="Card"
       >
         <Card.Body>
           <Card.Title
+          className="visualiser-title"
             style={{
               display: "flex",
               justifyContent: "center",
@@ -298,7 +302,7 @@ function Visualizer() {
             }}
           >
             {" "}
-            <h1 id="totalTPETransactionValue">{totalTPETransaction}</h1>
+            <h1 id="totalRecetteValue">{totalTPETransaction}</h1>
           </Card.Text>
         </Card.Body>
       </Card>

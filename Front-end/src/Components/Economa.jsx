@@ -71,8 +71,8 @@ function Economa() {
       >
         <Visualizer />
       </div>
-      <Row style={{ display: "flex", width: "100%" }}>
-        <Col className="col-6">
+      <Row className="achatliste" style={{ display: "flex", width: "100%" }}>
+        <Col id="liste-des-achats" className="col-6">
           <div
             style={{
               display: "flex",
@@ -82,6 +82,7 @@ function Economa() {
             }}
           >
             <Card
+              id="thelist"
               style={{
                 width: "95%",
                 height: "900px",
@@ -108,14 +109,8 @@ function Economa() {
                   <br />
                   Total: {totalSum}
                 </Card.Title>
-
-                {user.Role === "Patron" ||
-                user.Role === "finance" ||
-                user.Role === "gerant" ||
-                user.Role === "achat" ? (
-                  <AddProduct />
-                ) : null}
-                <div style={{ marginTop: "25px" }}>
+                {user.Role === "User" ? null : <AddProduct />}
+                <div className="achatliste" style={{ marginTop: "25px" }}>
                   {products.map((product) => (
                     <EconomaProduct product={product} key={product._id} />
                   ))}
@@ -124,7 +119,7 @@ function Economa() {
             </Card>
           </div>
         </Col>
-        <Col className="col-6">
+        <Col id="carousel" className="col-6">
           <div style={{ marginTop: "10px" }}>
             <Carousel>
               {products.map((product) => (
@@ -139,7 +134,7 @@ function Economa() {
                       height: "100%",
                       borderRadius: "10px",
                     }}
-                    alt={`Product ${product._id}`}
+                    
                   />
                   <Carousel.Caption>
                     <h3>{product.Name}</h3>

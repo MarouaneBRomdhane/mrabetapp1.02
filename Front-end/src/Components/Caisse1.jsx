@@ -45,58 +45,30 @@ function Caisse1(caisse) {
             className="Card rounded-lg shadow-md "
           >
             <Card.Body>
-              <Card.Title
-                style={{
+              <Card.Title  style={{
                   color: "#FFF7D6",
                   textAlign: "center",
                   fontSize: "40px",
                   fontWeight: "700",
                 }}
-              >
+>
                 {caisse.Title}
               </Card.Title>
               <div className="flex">
-                <Card.Text
-                  style={{
-                    color: "#FFF7D6",
-                    fontSize: "25px",
-                    fontWeight: "700",
-                    width: "30%",
-                  }}
-                >
+                <Card.Text className="text-white text-2xl font-bold w-100">
                   Recette:
                 </Card.Text>
                 {caisse.Recette && caisse.Recette.length > 0 && (
-                  <Card.Text
-                    style={{
-                      color: "#FFF7D6",
-                      textAlign: "center",
-                      fontSize: "25px",
-                      fontWeight: "500",
-                    }}
-                  >
+                  <Card.Text className="text-white text-2xl ml-2">
                     {caisse.Recette[0].montant}
                   </Card.Text>
                 )}
               </div>
               <div className="flex">
-                <Card.Text
-                  style={{
-                    color: "#FFF7D6",
-                    fontSize: "25px",
-                    fontWeight: "700",
-                    width: "30%",
-                  }}
-                >
+                <Card.Text className="text-white text-2xl font-bold w-100">
                   Espece:
                 </Card.Text>
-                <Card.Text
-                  style={{
-                    color: "#FFF7D6",
-                    fontSize: "25px",
-                    fontWeight: "400",
-                  }}
-                >
+                <Card.Text className="text-white text-2xl ml-2">
                   {caisse.Liquide.montantLiquide}
                 </Card.Text>
               </div>
@@ -156,10 +128,7 @@ function Caisse1(caisse) {
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
-
-              {user.Role === "Patron" || user.Role === "finance" ? (
-                <Modal1 caisse={caisse} />
-              ) : null}
+              {user.Role === "User" ? null : <Modal1 caisse={caisse} />}
             </Card.Body>
           </Card>
         ))}

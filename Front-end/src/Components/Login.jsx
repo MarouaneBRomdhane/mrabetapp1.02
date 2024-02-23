@@ -29,7 +29,7 @@ const Login = () => {
           borderRadius: "10px",
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         }}
-        className="Card"
+        className="Cardlogin"
       >
         <Card.Body>
           <Card.Title
@@ -76,7 +76,7 @@ const Login = () => {
                     color: "black",
                     padding: "0.7rem 1rem",
                     borderRadius: "5px",
-                    width: "27.875em",
+                    
                     transition: "all ease-in-out .5s",
                     marginRight: "-2rem",
                     height: "38px",
@@ -116,8 +116,8 @@ const Login = () => {
               {e.msg}
             </span>
           ))}
-          <Button className="BTN-LOGIN" onClick={handleLogin}>
-            Se connecter
+          <Button  className="BTN-LOGIN" id="buttonlogin" onClick={handleLogin}>
+          <h6>Se connecter</h6> 
           </Button>
         </Card.Body>
       </Card>

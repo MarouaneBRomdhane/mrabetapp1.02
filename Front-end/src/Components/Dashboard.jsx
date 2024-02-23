@@ -146,6 +146,7 @@ const Dashboard = () => {
           color: "#FFF7D6",
           textAlign: "center",
         }}
+        className="greeting"
       >
         <h1>
           {" "}
@@ -178,7 +179,7 @@ const Dashboard = () => {
             marginTop: "10px",
             marginBottom: "10px",
           }}
-          className="Card"
+          className="Card-dashboard"
         >
           <Card.Body>
             <Card.Title
@@ -186,9 +187,10 @@ const Dashboard = () => {
                 display: "flex",
                 justifyContent: "center",
                 color: "#FFF7D6",
-                fontSize: "30px",
+                fontSize: "23px",
                 fontWeight: "700",
               }}
+              className="card-title"
             >
               Jours de travaille /mois
             </Card.Title>
@@ -197,7 +199,7 @@ const Dashboard = () => {
                 display: "flex",
                 justifyContent: "center",
                 color: "#FFF7D6",
-                fontSize: "35px",
+                fontSize: "30px",
                 fontWeight: "bold",
               }}
             >
@@ -216,7 +218,7 @@ const Dashboard = () => {
             marginTop: "10px",
             marginBottom: "10px",
           }}
-          className="Card"
+          className="Card-dashboard"
         >
           <Card.Body>
             <Card.Title
@@ -224,10 +226,11 @@ const Dashboard = () => {
                 display: "flex",
                 justifyContent: "center",
                 color: "#FFF7D6",
-                fontSize: "30px",
+                fontSize: "23px",
                 fontWeight: "700",
                 textAlign: "center",
               }}
+              className="card-title"
             >
               Jours de travaille restant
             </Card.Title>
@@ -236,7 +239,7 @@ const Dashboard = () => {
                 display: "flex",
                 justifyContent: "center",
                 color: "#FFF7D6",
-                fontSize: "35px",
+                fontSize: "30px",
                 fontWeight: "bold",
               }}
             >
@@ -255,7 +258,7 @@ const Dashboard = () => {
             marginTop: "10px",
             marginBottom: "10px",
           }}
-          className="Card"
+          className="Card-dashboard"
         >
           <Card.Body>
             <Card.Title
@@ -263,9 +266,10 @@ const Dashboard = () => {
                 display: "flex",
                 justifyContent: "center",
                 color: "#FFF7D6",
-                fontSize: "30px",
+                fontSize: "23px",
                 fontWeight: "700",
               }}
+              className="card-title"
             >
               Solde jour de repos
             </Card.Title>
@@ -274,7 +278,7 @@ const Dashboard = () => {
                 display: "flex",
                 justifyContent: "center",
                 color: "#FFF7D6",
-                fontSize: "35px",
+                fontSize: "30px",
                 fontWeight: "bold",
               }}
             >
@@ -293,7 +297,7 @@ const Dashboard = () => {
             marginTop: "10px",
             marginBottom: "10px",
           }}
-          className="Card"
+          className="Card-dashboard"
         >
           <Card.Body>
             <Card.Title
@@ -301,9 +305,10 @@ const Dashboard = () => {
                 display: "flex",
                 justifyContent: "center",
                 color: "#FFF7D6",
-                fontSize: "30px",
+                fontSize: "23px",
                 fontWeight: "700",
               }}
+              className="card-title"
             >
               Salaire restant pour ce mois
             </Card.Title>
@@ -312,7 +317,7 @@ const Dashboard = () => {
                 display: "flex",
                 justifyContent: "center",
                 color: "#FFF7D6",
-                fontSize: "35px",
+                fontSize: "30px",
                 fontWeight: "bold",
               }}
             >
@@ -328,6 +333,7 @@ const Dashboard = () => {
       user.Role === "finance" ||
       user.Role === "gerant" ? (
         <div
+          className="div2ligne"
           style={{
             width: "98%",
             height: "auto",
@@ -350,7 +356,7 @@ const Dashboard = () => {
               marginBottom: "10px",
               overflow: "auto",
             }}
-            className="Card"
+            className="personal-list"
           >
             <Card.Body>
               <Card.Title
@@ -383,6 +389,7 @@ const Dashboard = () => {
                         padding: "5px",
                         width: "25%",
                       }}
+                      className="userspersonel"
                     >
                       <p
                         style={{
@@ -394,7 +401,7 @@ const Dashboard = () => {
                       >
                         {selectedUser.Name}
                       </p>
-                      <p
+                      <p1
                         style={{
                           margin: 0,
                           color: "#FFF7D6",
@@ -404,7 +411,7 @@ const Dashboard = () => {
                         {selectedUser.Role === "user"
                           ? "Simple Employer"
                           : selectedUser.Role}
-                      </p>
+                      </p1>
                     </div>
                     <div
                       style={{
@@ -412,6 +419,7 @@ const Dashboard = () => {
                         padding: "5px",
                         width: "20%",
                       }}
+                      className="soldeconge"
                     >
                       <p
                         style={{
@@ -440,6 +448,7 @@ const Dashboard = () => {
                         padding: "5px",
                         width: "21%",
                       }}
+                      className="soldeconge"
                     >
                       <p
                         style={{
@@ -472,19 +481,18 @@ const Dashboard = () => {
                         marginLeft: "3%",
                         gap: "6%",
                       }}
+                      className="logos"
                     >
                       <div
-                        className="toggle-button-cover"
+                        className=" toggle-button-cover"
                         style={{ marginTop: "8%" }}
                       >
-                        <div id="button-3" className="button r">
+                        <div id="button-3" className=" button r">
                           <input
                             className="checkbox"
                             type="checkbox"
                             defaultChecked={selectedUser.isAbscent}
-                            disabled={
-                              selectedUser.isAbscent || currentHrs === 12
-                            }
+                            // disabled={selectedUser.isAbscent || currentHrs === 0}
                             onClick={() => {
                               handleShow(selectedUser);
                             }}
@@ -493,6 +501,7 @@ const Dashboard = () => {
                           <div className="layer" />
                         </div>
                       </div>
+
                       <div style={{ marginLeft: "2%" }}>
                         <CertificatModal selectedUser={selectedUser} />
                       </div>
@@ -513,7 +522,7 @@ const Dashboard = () => {
             </Card.Body>
           </Card>
 
-          <div style={{ width: "25%" }}>
+          <div style={{ width: "25%" }} className="secondligne">
             {/* DEMANDE D'AVANCE SUR SALAIRE */}
             <Card
               style={{
@@ -523,9 +532,12 @@ const Dashboard = () => {
                 marginTop: "10px",
                 marginBottom: "10px",
               }}
-              className="Card"
+              className="dashboard-Card"
             >
-              <Card.Body>
+              <Card.Body
+                className="dashboard-Card"
+                style={{ display: "flex", flexDirection: "column" }}
+              >
                 <Card.Title
                   style={{
                     display: "flex",
@@ -534,12 +546,13 @@ const Dashboard = () => {
                     fontSize: "30px",
                     fontWeight: "700",
                   }}
+                  className="dashcardtitle"
                 >
                   Demande avance sur salaire
                 </Card.Title>
                 <Form>
                   <Form.Group
-                    className="mb-3"
+                    className=" mb-3"
                     controlId="exampleForm.ControlInput1"
                   >
                     <Form.Label style={{ color: "#FFF7D6", fontSize: "25px" }}>
@@ -555,8 +568,8 @@ const Dashboard = () => {
                   </Form.Group>
                 </Form>
                 <Button
-                  style={{ marginLeft: "75%" }}
-                  className="BTN"
+                  style={{ alignSelf: "center" }}
+                  className=" dashbtn BTN"
                   onClick={handleAvance}
                 >
                   {" "}
@@ -572,10 +585,14 @@ const Dashboard = () => {
                 backgroundColor: "rgba(0, 126, 127, 0.75)",
                 borderRadius: "10px",
                 marginBottom: "10px",
+                height: "46%",
               }}
-              className="Card"
+              className="dashboard-Card"
             >
-              <Card.Body>
+              <Card.Body
+                className="dashboard-Card"
+                style={{ display: "flex", flexDirection: "column" }}
+              >
                 <Card.Title
                   style={{
                     display: "flex",
@@ -586,6 +603,7 @@ const Dashboard = () => {
                     textAlign: "center",
                     marginBottom: "16%",
                   }}
+                  className="dashcardtitle"
                 >
                   Certificat Medical
                 </Card.Title>
@@ -603,8 +621,8 @@ const Dashboard = () => {
                   </Form.Group>
                 </Form>
                 <Button
-                  style={{ marginLeft: "75%" }}
-                  className="BTN"
+                  style={{ alignSelf: "center" }}
+                  className=" dashbtn BTN"
                   onClick={handleCertificat}
                 >
                   {" "}
@@ -613,21 +631,21 @@ const Dashboard = () => {
               </Card.Body>
             </Card>
           </div>
-          <div style={{ width: "25%" }}>
+          <div style={{ width: "25%" }} className="secondligne">
             {/* LISTE DES AVANCE POUR MOIS COURANT */}
             <Card
               style={{
                 width: "100%",
-                height: "37%",
+                height: "46%",
                 backgroundColor: "rgba(0, 126, 127, 0.75)",
                 borderRadius: "10px",
                 marginTop: "10px",
                 marginBottom: "10px",
                 overflow: "auto",
               }}
-              className="Card"
+              className="dashboard-Card"
             >
-              <Card.Body>
+              <Card.Body style={{ display: "flex", flexDirection: "column" }}>
                 <Card.Title
                   style={{
                     display: "flex",
@@ -636,6 +654,7 @@ const Dashboard = () => {
                     fontSize: "30px",
                     fontWeight: "700",
                   }}
+                  className="dashcardtitle"
                 >
                   Mes avance pour ce mois
                 </Card.Title>
@@ -669,13 +688,13 @@ const Dashboard = () => {
             <Card
               style={{
                 width: "100%",
-                height: "39%",
+                height: "46%",
                 backgroundColor: "rgba(0, 126, 127, 0.75)",
                 borderRadius: "10px",
                 marginBottom: "10px",
                 overflow: "auto",
               }}
-              className="Card"
+              className="dashboard-Card"
             >
               <Card.Body>
                 <Card.Title
@@ -706,7 +725,7 @@ const Dashboard = () => {
                         fontWeight: "500",
                         fontSize: "17px",
                       }}
-                      className="divMta3userlist"
+                      className="dashcardtitle"
                     >
                       <div style={{ width: "25%" }}> {abscence.date} </div>
                       <div style={{ width: "45%" }}>
@@ -727,8 +746,11 @@ const Dashboard = () => {
           </div>
         </div>
       ) : (
-        <div style={{ display: "flex", justifyContent: "center", gap: "1%" }}>
-          <div style={{ width: "47%" }}>
+        <div
+          className="div2ligne"
+          style={{ display: "flex", justifyContent: "center", gap: "1%" }}
+        >
+          <div style={{ width: "47%" }} className="secondligne">
             {/* DEMANDE D'AVANCE SUR SALAIRE */}
             <Card
               style={{
@@ -737,27 +759,28 @@ const Dashboard = () => {
                 borderRadius: "10px",
                 marginTop: "10px",
                 marginBottom: "10px",
-                height: "50%",
               }}
-              className="Card"
+              className="dashboard-Card"
             >
-              <Card.Body>
+              <Card.Body
+                className="dashboard-Card"
+                style={{ display: "flex", flexDirection: "column" }}
+              >
                 <Card.Title
                   style={{
                     display: "flex",
                     justifyContent: "center",
                     color: "#FFF7D6",
-                    fontSize: "28px",
+                    fontSize: "30px",
                     fontWeight: "700",
-                    textAlign: "center",
-                    marginBottom: "2%",
                   }}
+                  className="dashcardtitle"
                 >
                   Demande avance sur salaire
                 </Card.Title>
                 <Form>
                   <Form.Group
-                    className="mb-3"
+                    className=" mb-3"
                     controlId="exampleForm.ControlInput1"
                   >
                     <Form.Label style={{ color: "#FFF7D6", fontSize: "25px" }}>
@@ -773,8 +796,8 @@ const Dashboard = () => {
                   </Form.Group>
                 </Form>
                 <Button
-                  style={{ marginLeft: "86%" }}
-                  className="BTN"
+                  style={{ alignSelf: "center" }}
+                  className=" dashbtn BTN"
                   onClick={handleAvance}
                 >
                   {" "}
@@ -790,11 +813,14 @@ const Dashboard = () => {
                 backgroundColor: "rgba(0, 126, 127, 0.75)",
                 borderRadius: "10px",
                 marginBottom: "10px",
-                height: "50%",
+                height: "46%",
               }}
-              className="Card"
+              className="dashboard-Card"
             >
-              <Card.Body>
+              <Card.Body
+                className="dashboard-Card"
+                style={{ display: "flex", flexDirection: "column" }}
+              >
                 <Card.Title
                   style={{
                     display: "flex",
@@ -803,8 +829,9 @@ const Dashboard = () => {
                     fontSize: "28px",
                     fontWeight: "700",
                     textAlign: "center",
-                    marginBottom: "2%",
+                    marginBottom: "16%",
                   }}
+                  className="dashcardtitle"
                 >
                   Certificat Medical
                 </Card.Title>
@@ -818,12 +845,13 @@ const Dashboard = () => {
                       autoFocus
                       onChange={(e) => handleImageChange(e)}
                       accept="image/*"
+                      style={{ marginTop: "-12.5%" }}
                     />
                   </Form.Group>
                 </Form>
                 <Button
-                  style={{ marginLeft: "86%", marginTop: "10%" }}
-                  className="BTN"
+                  style={{ alignSelf: "center", marginTop: "-5%" }}
+                  className=" dashbtn BTN"
                   onClick={handleCertificat}
                 >
                   {" "}
@@ -832,21 +860,21 @@ const Dashboard = () => {
               </Card.Body>
             </Card>
           </div>
-          <div style={{ width: "47%" }}>
+          <div style={{ width: "47%" }} className="secondligne">
             {/* LISTE DES AVANCE POUR MOIS COURANT */}
             <Card
               style={{
                 width: "100%",
-                height: "50%",
+                height: "46%",
                 backgroundColor: "rgba(0, 126, 127, 0.75)",
                 borderRadius: "10px",
                 marginTop: "10px",
                 marginBottom: "10px",
                 overflow: "auto",
               }}
-              className="Card"
+              className="dashboard-Card"
             >
-              <Card.Body>
+              <Card.Body style={{ display: "flex", flexDirection: "column" }}>
                 <Card.Title
                   style={{
                     display: "flex",
@@ -855,6 +883,7 @@ const Dashboard = () => {
                     fontSize: "30px",
                     fontWeight: "700",
                   }}
+                  className="dashcardtitle"
                 >
                   Mes avance pour ce mois
                 </Card.Title>
@@ -888,13 +917,13 @@ const Dashboard = () => {
             <Card
               style={{
                 width: "100%",
-                height: "50%",
+                height: "46%",
                 backgroundColor: "rgba(0, 126, 127, 0.75)",
                 borderRadius: "10px",
                 marginBottom: "10px",
                 overflow: "auto",
               }}
-              className="Card"
+              className="dashboard-Card"
             >
               <Card.Body>
                 <Card.Title
@@ -908,7 +937,7 @@ const Dashboard = () => {
                     marginBottom: "16%",
                   }}
                 >
-                  Mes absence pour ce mois
+                  Certificat Medical
                 </Card.Title>
                 <div style={{ marginTop: "-15%" }}>
                   {user.Absence.map((abscence) => (
@@ -925,7 +954,7 @@ const Dashboard = () => {
                         fontWeight: "500",
                         fontSize: "17px",
                       }}
-                      className="divMta3userlist"
+                      className="dashcardtitle"
                     >
                       <div style={{ width: "25%" }}> {abscence.date} </div>
                       <div style={{ width: "45%" }}>

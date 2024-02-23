@@ -6,7 +6,7 @@ import Login from "./Components/Login";
 import { Route, Routes } from "react-router-dom";
 import Economa from "./Components/Economa";
 import "./App.css";
-import "./mediaQueries.css";
+import "./mediaQueries.css"
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrent } from "./Redux/Actions/Users_Action";
 import History from "./Components/History";

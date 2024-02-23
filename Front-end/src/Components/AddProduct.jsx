@@ -130,7 +130,7 @@ const AddProduct = () => {
   return (
     <div>
       {/* button to open modal */}
-      <Button onClick={handleShow} className="BTN">
+      <Button   id="addproduct" onClick={handleShow} className="BTN">
         Ajouter un Achat
       </Button>
 
@@ -280,6 +280,7 @@ const AddProduct = () => {
             {/* Button on the same line to add signle PRODUCT */}
 
             <Button
+            id="btnajouter"
               className="BTN-CHQTPE"
               onClick={addSingleProduct}
               style={{ marginLeft: "375px", marginBottom: "20px" }}

@@ -26,6 +26,7 @@ const History = () => {
       <Navbar />
       <div style={{ display: "flex", justifyContent: "center" }}>
         <div
+        className="historybackgrond"
           style={{
             marginTop: "50px",
             borderRadius: "10px",
@@ -91,6 +92,7 @@ const History = () => {
                 </Row>
               </div>
               <div
+              className="historycards"
                 style={{
                   display: "flex",
                   justifyContent: "center",

@@ -128,6 +128,7 @@ const Modal1 = ({ caisse }) => {
           </Row>
           <Row style={{ marginTop: "-10px" }}>
             <Form.Label
+            id="montant-modal"
               column
               md={6}
               sm={6}
@@ -144,6 +145,7 @@ const Modal1 = ({ caisse }) => {
               />
             </Form.Label>
             <Form.Label
+            
               column
               md={4}
               sm={4}
@@ -152,6 +154,7 @@ const Modal1 = ({ caisse }) => {
             >
               N°
               <Form.Control
+              id="num-modal"
                 type="number"
                 style={{ marginLeft: "15px" }}
                 placeholder="N°"
@@ -161,8 +164,8 @@ const Modal1 = ({ caisse }) => {
             </Form.Label>
 
             {/* Button on the same line to add signle CHEQUE statement*/}
-            <Col md={2} sm={2} ml={1} className="d-flex align-items-center">
-              <Button className="BTN-CHQTPE" onClick={handleSingleCheque}>
+            <Col id="modal-caisse-btn" md={2} sm={2} ml={1} className="d-flex align-items-center">
+              <Button  className="BTN-CHQTPE" onClick={handleSingleCheque}>
                 Ajouter
               </Button>
             </Col>
@@ -227,7 +230,7 @@ const Modal1 = ({ caisse }) => {
           </div>
 
           {/* FIelds to add single TPE statments */}
-          <Row style={{ marginTop: "20px" }}>
+          <Row className="tpe-row" style={{ marginTop: "20px" }}>
             <h5 style={{ color: "#FFF7D6", fontSize: "25px" }}>TPE</h5>
           </Row>
           <Row style={{ marginTop: "-10px" }}>
@@ -256,6 +259,7 @@ const Modal1 = ({ caisse }) => {
             >
               N°
               <Form.Control
+              id="num-modal"
                 type="number"
                 style={{ marginLeft: "15px" }}
                 placeholder="N°"
@@ -264,7 +268,7 @@ const Modal1 = ({ caisse }) => {
               />
             </Form.Label>
             {/* Button on the same line to add signle TPE statement*/}
-            <Col md={2} sm={2} className="d-flex align-items-center">
+            <Col id="modal-caisse-btn" md={2} sm={2} className="d-flex align-items-center">
               <Button className="BTN-CHQTPE" onClick={handleSingleTpe}>
                 Ajouter
               </Button>
@@ -330,7 +334,7 @@ const Modal1 = ({ caisse }) => {
           </div>
 
           {/* Uploader les image scanner des ticket de caisse */}
-          <Row>
+          <Row className="tpe-row">
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label
                 style={{

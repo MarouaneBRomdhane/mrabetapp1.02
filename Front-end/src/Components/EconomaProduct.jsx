@@ -50,12 +50,12 @@ function EconomaProduct({ product }) {
             <div
               style={{
                 marginTop: "auto",
-                fontSize: "30px",
+                fontSize: "45px",
                 fontWeight: "400",
                 color: "#FFF7D6",
-                marginLeft: "10px",
+                
               }}
-              className="divtextmta3lesproduit"
+              className="divtextmta3lesproduit2"
             >
               <h1>
                 {product.Quantity}

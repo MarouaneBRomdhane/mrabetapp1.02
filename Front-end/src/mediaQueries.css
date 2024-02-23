@@ -1,6 +1,3 @@
-/*
-
-
 @media only screen and (max-width: 768px) {
   .NavBar-BackGround {
     flex-direction: column;
@@ -77,6 +74,13 @@
   .Card h1 {
     font-size: 18px;
   }
+  .card-title {
+    font-size: 22px !important;
+    text-align: center !important;
+  }
+  .card-text {
+    font-size: 20px !important;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -92,6 +96,31 @@
   }
   .platcardtext a {
     font-size: 25px !important;
+  }
+  .card-title {
+    font-size: 23px !important;
+    text-align: center !important;
+  }
+  .div2ligne {
+    flex-direction: column;
+  }
+  .Card-dashboard {
+    font-size: 29px !important;
+  }
+  .button {
+    position: relative;
+    top: 50%;
+    width: 69px;
+    height: 31px;
+    margin: -20px auto 0 auto;
+    overflow: hidden;
+  }
+  #button-3 .knobs {
+    width: 24px;
+    height: 24px;
+  }
+  #button-3 {
+    margin-top: 10px;
   }
 }
 
@@ -109,36 +138,37 @@
 }
 
 @media (max-width: 768px) {
-  .divMta3lesProduit {
-    flex-direction: column;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-  .textmt3lesproduit {
-    display: block !important;
-    font-size: smaller !important;
-  }
   .listedesachats {
-    font-size: 25px !important;
+    font-size: 40px !important;
+  }
+  .logoutImpr {
+    margin-right: 73px;
   }
 }
 
 @media (max-width: 435px) {
   .divtextmta3lesproduit h1 {
-    font-size: 10px;
-    justify-content: center !important;
+    font-size: 15px;
+  }
+  .divtextmta3lesproduit2 h1 {
+    font-size: 15px;
   }
   .textmt3lesproduit {
-    justify-content: center !important;
+    width: auto;
   }
+
   .listedesachats {
     font-size: 22px !important;
+  }
+  .logoutImpr {
+    margin-right: 50px;
   }
 }
 
 @media screen and (max-width: 435px) {
+  .mrabet-logo {
+    margin-right: 37px;
+  }
   .inputgrouphistory {
     width: 200px !important;
   }
@@ -155,10 +185,12 @@
     width: 100%;
   }
   .card-title {
-    font-size: 12px !important;
+    font-size: 22px !important;
+    text-align: center !important;
   }
+
   .card-title h3 {
-    font-size: 12px !important;
+    font-size: 17px !important;
   }
   .card-title2 {
     font-size: 17px !important;
@@ -170,14 +202,218 @@
     font-size: 12px !important;
   }
   .card-text {
-    font-size: 12px !important;
+    font-size: 20px !important;
   }
   .card {
-    width: 100% !important;
+    width: 70% !important;
     margin-bottom: 20px;
+  }
+  .historycards {
+    display: block !important;
   }
   .modal-body {
     padding: 10px !important;
   }
+  #num-modal {
+    width: 88% !important;
+    margin-left: 62px !important;
+  }
+  #montant-modal {
+    width: 100% !important;
+  }
+  #modal-caisse-btn {
+    margin-left: 76% !important;
+  }
+  .tpe-row {
+    margin-top: -80px !important;
+  }
+  #liste-des-achats {
+    width: 100% !important;
+    margin-left: 2% !important;
+  }
+  .achatliste {
+    display: block !important;
+  }
+  #carousel {
+    margin-left: 28% !important;
+  }
+  #thelist {
+    height: 300px !important;
+  }
 }
-*/
+/* dashbordmedia */
+@media screen and (max-width: 435px) {
+  .greeting {
+    height: auto !important;
+    width: auto !important;
+  }
+  .dashcardtitle {
+    font-size: 18px !important;
+  }
+  .dashboard-Card {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 300px !important;
+    justify-items: center;
+  }
+  .dashbtn {
+    font-size: 14px;
+    margin: auto;
+  }
+  .div2ligne {
+    display: block;
+  }
+  .card-title {
+    font-size: 18px !important;
+  }
+  .userspersonel p {
+    font-size: 17px !important;
+  }
+
+  .Card-dashboard {
+    height: 210px !important;
+  }
+  .personal-list {
+    width: auto !important;
+  }
+  .soldeconge p {
+    font-size: 16px !important;
+  }
+  .logos {
+    display: block !important;
+  }
+  .secondligne {
+    margin-left: 15% !important;
+  }
+  .leslogo {
+    font-size: 10px;
+  }
+  #addproduct {
+    font-size: 70% !important;
+    margin-bottom: 20px !important;
+  }
+  #btnajouter {
+    margin-left: 75% !important;
+  }
+  .button {
+    position: relative;
+    top: 50%;
+    width: 69px;
+    height: 31px;
+    margin: -20px auto 0 auto;
+    overflow: hidden;
+  }
+  #button-3 .knobs {
+    width: 24px;
+    height: 24px;
+  }
+  #button-3 {
+    margin-top: 10px;
+  }
+
+  #buttonlogin {
+    margin: left 10px !important;
+  }
+  .historybackgrond {
+    width: 233px !important;
+  }
+  .visualiser-title {
+    font-size: 44px !important;
+  }
+  #totalRecetteValue {
+    margin-top: 25px !important;
+    font-size: 29px !important;
+  }
+}
+/* dashbordmedia */
+@media screen and (max-width: 768px) {
+  .greeting {
+    height: auto !important;
+    width: auto !important;
+  }
+  .dashcardtitle {
+    font-size: 18px !important;
+  }
+  .dashboard-Card {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 300px !important;
+    justify-items: center;
+  }
+  .dashbtn {
+    font-size: 14px;
+    margin: auto;
+  }
+  .div2ligne {
+    display: block;
+  }
+  .card-title {
+    font-size: 18px !important;
+  }
+  .userspersonel p {
+    font-size: 17px !important;
+  }
+
+  .Card-dashboard {
+    height: 210px !important;
+  }
+  .personal-list {
+    width: auto !important;
+  }
+  .soldeconge p {
+    font-size: 16px !important;
+  }
+  .logos {
+    display: block !important;
+  }
+  .secondligne {
+    margin-left: 15% !important;
+  }
+  .button {
+    position: relative;
+    top: 50%;
+    width: 69px;
+    height: 31px;
+    margin: -20px auto 0 auto;
+    overflow: hidden;
+  }
+  #button-3 .knobs {
+    width: 24px;
+    height: 24px;
+  }
+  #button-3 {
+    margin-top: 10px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .Cardlogin {
+    width: 90%;
+    margin-top: 100px;
+  }
+
+  .Cardlogin .Card.Title {
+    font-size: 2rem;
+  }
+
+  .Cardlogin .Form.Label {
+    font-size: 20px;
+  }
+
+  .Cardlogin .Form.Control {
+    width: 100%;
+    margin-right: 0;
+  }
+  #buttonlogin {
+    font-size: 12px !important;
+    margin-left: 65% !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .Accordion.Header {
+    font-size: 11px !important; /* Adjust the font size as needed */
+  }
+}

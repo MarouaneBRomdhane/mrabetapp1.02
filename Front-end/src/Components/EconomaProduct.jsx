@@ -22,14 +22,14 @@ function EconomaProduct({ product }) {
             style={{
               marginTop: "auto",
               fontSize: "30px",
-              fontWeight: "500",
+              fontWeight: "700",
               width: "32%",
               color: "#FFF7D6",
               marginLeft: "10px",
             }}
             className="divtextmta3lesproduit"
           >
-            <h1>{product.Name}</h1>
+            {product.Name}
           </div>
           <div
             className="textmt3lesproduit"
@@ -44,22 +44,21 @@ function EconomaProduct({ product }) {
               }}
               className="divtextmta3lesproduit"
             >
-              <h1> Qte:</h1>
+              Qte:
             </div>
 
             <div
               style={{
                 marginTop: "auto",
-                fontSize: "45px",
+                fontSize: "30px",
                 fontWeight: "400",
                 color: "#FFF7D6",
+                marginLeft: "5%",
               }}
-              className="divtextmta3lesproduit2"
+              className="divtextmta3lesproduit"
             >
-              <h1>
-                {product.Quantity}
-                {product.Unity}
-              </h1>
+              {product.Quantity}
+              {product.Unity}
             </div>
           </div>
           <div
@@ -70,13 +69,13 @@ function EconomaProduct({ product }) {
               style={{
                 marginTop: "auto",
                 fontSize: "30px",
-                fontWeight: "500",
+                fontWeight: "700",
                 color: "#FFF7D6",
                 marginRight: "10px",
               }}
               className="divtextmta3lesproduit"
             >
-              <h1>Prix:</h1>
+              Prix:
             </div>
             <div
               style={{
@@ -84,12 +83,12 @@ function EconomaProduct({ product }) {
                 fontSize: "30px",
                 fontWeight: "400",
                 color: "#FFF7D6",
-                marginLeft: "-6px",
+                // marginLeft: "-6px",
                 marginRight: "5px",
               }}
               className="divtextmta3lesproduit"
             >
-              <h1>{product.Price}Dt</h1>
+              {product.Price}dt
             </div>
           </div>
         </div>

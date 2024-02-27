@@ -30,8 +30,6 @@ const AddProduct = () => {
 
   const Liquide = useSelector((state) => state.Liquide.liquide);
 
-  const product = useSelector((state) => state.Products.products);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -43,7 +41,7 @@ const AddProduct = () => {
       return;
     }
     if (
-      Number(Cuisine) + Number(Pizzeria) + Number(Pâtisserie) + Number(Bar) !=
+      Number(Cuisine) + Number(Pizzeria) + Number(Pâtisserie) + Number(Bar) !==
         Quantity &&
       Affectation === "Commune"
     ) {
@@ -130,7 +128,7 @@ const AddProduct = () => {
   return (
     <div>
       {/* button to open modal */}
-      <Button   id="addproduct" onClick={handleShow} className="BTN">
+      <Button id="addproduct" onClick={handleShow} className="BTN">
         Ajouter un Achat
       </Button>
 
@@ -280,7 +278,7 @@ const AddProduct = () => {
             {/* Button on the same line to add signle PRODUCT */}
 
             <Button
-            id="btnajouter"
+              id="btnajouter"
               className="BTN-CHQTPE"
               onClick={addSingleProduct}
               style={{ marginLeft: "375px", marginBottom: "20px" }}

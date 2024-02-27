@@ -16,7 +16,7 @@ function VisualizerHistory({
       ),
     0
   );
-  console.log(totalCaisses1);
+
   const totalCheques =
     caisses1.reduce(
       (acc, e) =>

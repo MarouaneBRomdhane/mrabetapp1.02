@@ -53,7 +53,6 @@ function EconomaProduct({ product }) {
                 fontSize: "45px",
                 fontWeight: "400",
                 color: "#FFF7D6",
-                
               }}
               className="divtextmta3lesproduit2"
             >

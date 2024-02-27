@@ -4,7 +4,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Modal1 from "./Modal1";
 import { useDispatch, useSelector } from "react-redux";
 import { getCaisses1 } from "../Redux/Actions/Caisse1_Action";
-import { CardText, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
 import Visualizer from "./Visualizer";
 import CaisseEvent from "./CaisseEvent";
@@ -19,7 +19,6 @@ function Caisse1(caisse) {
   }, [dispatch]);
 
   const Caisses = useSelector((state) => state.caisses1.caisses);
-  const products = useSelector((state) => state.Products.products);
   const user = useSelector((state) => state.users.user);
 
   return (

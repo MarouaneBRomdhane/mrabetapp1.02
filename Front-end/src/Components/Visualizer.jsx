@@ -11,8 +11,8 @@ function Visualizer() {
   const caisses1 = useSelector((state) => state.caisses1.caisses);
   const caissesEvent = useSelector((state) => state.caissesEvent.caisses);
   const bankCaisses = useSelector((state) => state.BankCaisses.BankCaisses);
-  const [totalSumFromEconoma, setTotalSumFromEconoma] = useState(0);
-  const [LiquideDisponibleEnCaisse, setLiquideDisponibleEnCaisse] = useState(0);
+  const [totalSumFromEconoma] = useState(0);
+  const [, setLiquideDisponibleEnCaisse] = useState(0);
   const [TotalRecette, setTotalRecette] = useState(0);
   const [TotalCheques, setTotalCheques] = useState(0);
   const [totalTPETransaction, setTotalTPETransaction] = useState(0);
@@ -157,7 +157,7 @@ function Visualizer() {
       >
         <Card.Body>
           <Card.Title
-          className="visualiser-title"
+            className="visualiser-title"
             style={{
               display: "flex",
               justifyContent: "center",
@@ -198,7 +198,7 @@ function Visualizer() {
       >
         <Card.Body>
           <Card.Title
-          className="visualiser-title"
+            className="visualiser-title"
             style={{
               display: "flex",
               textAlign: "center",
@@ -239,7 +239,7 @@ function Visualizer() {
       >
         <Card.Body>
           <Card.Title
-          className="visualiser-title"
+            className="visualiser-title"
             style={{
               display: "flex",
               justifyContent: "center",
@@ -280,7 +280,7 @@ function Visualizer() {
       >
         <Card.Body>
           <Card.Title
-          className="visualiser-title"
+            className="visualiser-title"
             style={{
               display: "flex",
               justifyContent: "center",

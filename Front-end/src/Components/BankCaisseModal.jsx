@@ -4,7 +4,7 @@ import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { Row } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateBankCaisse } from "../Redux/Actions/Bank_Caisses_Action";
 
 const BankCaisseModal = ({ caisse }) => {
@@ -16,8 +16,6 @@ const BankCaisseModal = ({ caisse }) => {
   const handleShow = () => setShow(true);
 
   const dispatch = useDispatch();
-
-  const Caisses = useSelector((state) => state.BankCaisses.BankCaisses);
 
   const handleUdateBankCaisse = () => {
     const updatedCaisse = {

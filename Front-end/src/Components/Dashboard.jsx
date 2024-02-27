@@ -442,35 +442,40 @@ const Dashboard = () => {
                         {selectedUser.DaysOffPerMounth}
                       </p>
                     </div>
-                    <div
-                      style={{
-                        marginBottom: "10px",
-                        padding: "5px",
-                        width: "21%",
-                      }}
-                      className="soldeconge"
-                    >
-                      <p
+                    {user.Role === "Patron" ||
+                    user.Role === "gerant" ||
+                    user.Role === "finance" ? (
+                      <div
                         style={{
-                          margin: 0,
-                          fontWeight: "bold",
-                          fontSize: "20px",
-                          color: "#FFF7D6",
+                          marginBottom: "10px",
+                          padding: "5px",
+                          width: "21%",
                         }}
+                        className="soldeconge"
                       >
-                        Salaire de ce mois
-                      </p>
-                      <p
-                        style={{
-                          margin: 0,
-                          color: "#FFF7D6",
-                          fontWeight: "500",
-                          fontSize: "20px",
-                        }}
-                      >
-                        {selectedUser.SalaireForCurrentMonth.toFixed(3)}
-                      </p>
-                    </div>
+                        <p
+                          style={{
+                            margin: 0,
+                            fontWeight: "bold",
+                            fontSize: "20px",
+                            color: "#FFF7D6",
+                          }}
+                        >
+                          Salaire de ce mois
+                        </p>
+                        <p
+                          style={{
+                            margin: 0,
+                            color: "#FFF7D6",
+                            fontWeight: "500",
+                            fontSize: "20px",
+                          }}
+                        >
+                          {selectedUser.SalaireForCurrentMonth.toFixed(3)}
+                        </p>
+                      </div>
+                    ) : null}
+
                     <div
                       style={{
                         width: "20%",
@@ -492,7 +497,7 @@ const Dashboard = () => {
                             className="checkbox"
                             type="checkbox"
                             defaultChecked={selectedUser.isAbscent}
-                            disabled={selectedUser.isAbscent || currentHrs < 12}
+                            disabled={selectedUser.isAbscent || currentHrs < 9}
                             onClick={() => {
                               handleShow(selectedUser);
                             }}

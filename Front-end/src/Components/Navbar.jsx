@@ -5,8 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { Log_out } from "../Redux/Actions/Users_Action";
 import { ImExit, ImPrinter } from "react-icons/im";
 import logo from "../Media/logo.png";
+
 export default function Navbar() {
-  console.log(window.location.pathname);
   const user = useSelector((state) => state.users.user);
   const dispatch = useDispatch();
   const Navigate = useNavigate();
@@ -19,15 +19,13 @@ export default function Navbar() {
 
   const handlePrint = () => {
     const totalRecetteValue =
-      document.getElementById("totalRecetteValue").innerText;
-    const liquideDisponibleValue = document.getElementById(
-      "liquideDisponibleValue"
-    ).innerText;
+      document.getElementById("totalRecetteValue")?.innerText || "0";
+    const liquideDisponibleValue =
+      document.getElementById("liquideDisponibleValue")?.innerText || "0";
     const totalChequesValue =
-      document.getElementById("totalChequesValue").innerText;
-    const totalTPETransactionValue = document.getElementById(
-      "totalTPETransactionValue"
-    ).innerText;
+      document.getElementById("totalChequesValue")?.innerText || "0";
+    const totalTPETransactionValue =
+      document.getElementById("totalTPETransactionValue")?.innerText || "0";
 
     const printWindow = window.open("", "_blank");
     const htmlContent = `
@@ -189,7 +187,7 @@ export default function Navbar() {
             ${
               caisse.Recette && caisse.Recette.length > 0
                 ? caisse.Recette[0].montant
-                : "N/A"
+                : 0
             }
           </div>
         </div>
@@ -214,12 +212,13 @@ export default function Navbar() {
           <div class="bank-caisse-montant"> ${
             caisse.Recette && caisse.Recette.length > 0
               ? caisse.Recette[0].montant
-              : "N/A"
+              : 0
           }</div>
         `
       ).join("")}
     </div>
   </div>
+
 
   <!-- Row for Product List -->
   <div class="content">
@@ -279,31 +278,34 @@ export default function Navbar() {
           width: "32%",
         }}
       >
-        {" "}
-        <div className=" hover:text-white   py-2   mt-2.5 ">
-          {window.location.pathname === "/Caisses1" ? (
-            <Link
-              to="/Caisses1"
-              style={{
-                textDecoration: "none",
-                transition: "all 500ms",
-                color: "hwb(41 21% 27%)",
-                fontWeight: "700",
-              }}
-            >
-              {" "}
-              <h6>Caisses</h6>
-            </Link>
-          ) : (
-            <Link
-              to="/Caisses1"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              {" "}
-              <h6 id="navbar-text">Caisses</h6>
-            </Link>
-          )}
-        </div>
+        {user.Role === "Patron" ||
+        user.Role === "finance" ||
+        user.Role === "gerant" ? (
+          <div className=" hover:text-white   py-2   mt-2.5 ">
+            {window.location.pathname === "/Caisses1" ? (
+              <Link
+                to="/Caisses1"
+                style={{
+                  textDecoration: "none",
+                  transition: "all 500ms",
+                  color: "hwb(41 21% 27%)",
+                  fontWeight: "700",
+                }}
+              >
+                {" "}
+                <h6>Caisses</h6>
+              </Link>
+            ) : (
+              <Link
+                to="/Caisses1"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                {" "}
+                <h6 id="navbar-text">Caisses</h6>
+              </Link>
+            )}
+          </div>
+        ) : null}{" "}
         <div className=" hover:text-white rounded-md px-3 py-2  mt-2.5 ">
           {window.location.pathname === "/Economa" ? (
             <Link
@@ -382,9 +384,9 @@ export default function Navbar() {
               fontFamily: "Courier New",
               backgroundColor: "none",
             }}
-            href="#"
+            href="/"
             id="navbar-text"
-            className=" block px-4 py-2 text-sm  mt-2.5"
+            className="block px-4 py-2 text-sm mt-2.5"
           >
             <h4>
               <ImPrinter onClick={handlePrint} />
@@ -395,9 +397,9 @@ export default function Navbar() {
               textDecoration: "none",
               fontFamily: "Courier New",
             }}
-            href="#"
+            href="/"
             id="navbar-text"
-            className=" block px-4 py-2 text-sm  mt-2.5"
+            className="block px-4 py-2 text-sm mt-2.5"
             onClick={() => dispatch(Log_out(Navigate))}
           >
             <h4>

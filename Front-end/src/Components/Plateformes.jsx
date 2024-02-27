@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../Redux/Actions/Achat_Action";
-import EconomaProduct from "./EconomaProduct";
 import { Card } from "react-bootstrap";
 
 const Plateformes = () => {

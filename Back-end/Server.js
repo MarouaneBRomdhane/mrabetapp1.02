@@ -31,11 +31,9 @@ app.use("/api/history", HistoryRouter);
 
 const dispatchHistory = new Date().getHours();
 const currentDay = new Date().getDay();
-console.log(currentDay);
 
 const addHistory = async () => {
   if (dispatchHistory === 23) {
-    console.log(dispatchHistory);
     const caisse1 = await Caisses.find();
     const caisseEvent = await CaissesEvent.findById("65b27573340ca3038c4836ef");
     const Bankcaisse = await Bank_caisse_model.findById(

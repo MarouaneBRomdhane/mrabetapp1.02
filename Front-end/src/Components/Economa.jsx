@@ -12,7 +12,7 @@ import { getCurrent } from "../Redux/Actions/Users_Action";
 
 function Economa() {
   const dispatch = useDispatch();
-  const caisses = useSelector((state) => state.caisses1.caisses);
+
   const [totalSum, setTotalSum] = useState(0);
 
   useEffect(() => {
@@ -31,22 +31,23 @@ function Economa() {
     setShowModal(true);
   };
 
-  // Calculate the sum of all valid prices in the nested structure
-  const calculateTotalSum = () => {
-    const newTotalSum = products.reduce((sum, product) => {
-      const productPrices = product.Product.map(
-        (p) => parseFloat(p.Price) || 0
-      );
-      return (
-        sum + productPrices.reduce((priceSum, price) => priceSum + price, 0)
-      );
-    }, 0);
-    setTotalSum(newTotalSum.toFixed(3));
-  };
-
   useEffect(() => {
+    // Move the calculateTotalSum function inside the useEffect
+    const calculateTotalSum = () => {
+      const newTotalSum = products.reduce((sum, product) => {
+        const productPrices = product.Product.map(
+          (p) => parseFloat(p.Price) || 0
+        );
+        return (
+          sum + productPrices.reduce((priceSum, price) => priceSum + price, 0)
+        );
+      }, 0);
+      setTotalSum(newTotalSum.toFixed(3));
+    };
+
+    // Call the calculateTotalSum function
     calculateTotalSum();
-  }, [products, calculateTotalSum]);
+  }, [products]); // Now only produc
 
   return (
     <>
@@ -133,6 +134,7 @@ function Economa() {
                   <img
                     className="d-block w-100"
                     src={product.Facture}
+                    alt=""
                     onClick={() => handleImageClick(product.Facture)}
                     style={{
                       cursor: "pointer",

@@ -76,7 +76,7 @@ const Login = () => {
                     color: "black",
                     padding: "0.7rem 1rem",
                     borderRadius: "5px",
-                    
+
                     transition: "all ease-in-out .5s",
                     marginRight: "-2rem",
                     height: "38px",
@@ -116,8 +116,8 @@ const Login = () => {
               {e.msg}
             </span>
           ))}
-          <Button  className="BTN-LOGIN" id="buttonlogin" onClick={handleLogin}>
-          <h6>Se connecter</h6> 
+          <Button className="BTN-LOGIN" id="buttonlogin" onClick={handleLogin}>
+            <h6>Se connecter</h6>
           </Button>
         </Card.Body>
       </Card>

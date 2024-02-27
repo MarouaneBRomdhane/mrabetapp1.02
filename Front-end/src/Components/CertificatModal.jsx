@@ -59,6 +59,7 @@ const CertificatModal = ({ selectedUser }) => {
               <Carousel.Item key={absence._id}>
                 <img
                   className="d-block w-100"
+                  alt=""
                   src={absence.justification}
                   style={{
                     cursor: "pointer",

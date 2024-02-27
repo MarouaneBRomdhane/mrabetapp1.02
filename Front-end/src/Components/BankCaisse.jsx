@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import { useDispatch, useSelector } from "react-redux";
-import { CardText, Row } from "react-bootstrap";
+import { CardText } from "react-bootstrap";
 import { getBank_Caisses } from "../Redux/Actions/Bank_Caisses_Action";
 import BankCaisseModal from "./BankCaisseModal";
 import { getCurrent } from "../Redux/Actions/Users_Action";

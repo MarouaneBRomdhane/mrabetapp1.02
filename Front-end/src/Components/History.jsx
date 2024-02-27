@@ -4,7 +4,7 @@ import { getHistory } from "../Redux/Actions/History_Action";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import { Accordion, Card, Col, Row } from "react-bootstrap";
+import { Accordion, Card, Row } from "react-bootstrap";
 import VisualizerHistory from "./VisualizerHistory";
 import EconomaProduct from "./EconomaProduct";
 import Navbar from "./Navbar";
@@ -26,7 +26,7 @@ const History = () => {
       <Navbar />
       <div style={{ display: "flex", justifyContent: "center" }}>
         <div
-        className="historybackgrond"
+          className="historybackgrond"
           style={{
             marginTop: "50px",
             borderRadius: "10px",
@@ -92,7 +92,7 @@ const History = () => {
                 </Row>
               </div>
               <div
-              className="historycards"
+                className="historycards"
                 style={{
                   display: "flex",
                   justifyContent: "center",

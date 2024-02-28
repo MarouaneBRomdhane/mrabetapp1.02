@@ -168,164 +168,7 @@ const Dashboard = () => {
           color: "#FFF7D6",
           gap: "1%",
         }}
-      >
-        {/* NOMBRE DE JOURS DE TRAVAILLE PAR MOIS */}
-        <Card
-          style={{
-            width: "25%",
-            backgroundColor: "rgba(0, 126, 127, 0.75)",
-            borderRadius: "10px",
-            height: "120px",
-            marginTop: "10px",
-            marginBottom: "10px",
-          }}
-          className="Card-dashboard"
-        >
-          <Card.Body>
-            <Card.Title
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                color: "#FFF7D6",
-                fontSize: "23px",
-                fontWeight: "700",
-              }}
-              className="card-title"
-            >
-              Jours de travaille /mois
-            </Card.Title>
-            <Card.Text
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                color: "#FFF7D6",
-                fontSize: "30px",
-                fontWeight: "bold",
-              }}
-            >
-              {user.DaysOfWorkPerMounth} jours
-            </Card.Text>
-          </Card.Body>
-        </Card>
-
-        {/* NOMBRE DE JOURS DE TRAVAILLE RESTANT PAR MOIS */}
-        <Card
-          style={{
-            width: "25%",
-            backgroundColor: "rgba(0, 126, 127, 0.75)",
-            borderRadius: "10px",
-            height: "120px",
-            marginTop: "10px",
-            marginBottom: "10px",
-          }}
-          className="Card-dashboard"
-        >
-          <Card.Body>
-            <Card.Title
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                color: "#FFF7D6",
-                fontSize: "23px",
-                fontWeight: "700",
-                textAlign: "center",
-              }}
-              className="card-title"
-            >
-              Jours de travaille restant
-            </Card.Title>
-            <Card.Text
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                color: "#FFF7D6",
-                fontSize: "30px",
-                fontWeight: "bold",
-              }}
-            >
-              {user.DaysOfWorkPerMounth} jours
-            </Card.Text>
-          </Card.Body>
-        </Card>
-
-        {/* SOLDE JOURS DE REPOS */}
-        <Card
-          style={{
-            width: "25%",
-            backgroundColor: "rgba(0, 126, 127, 0.75)",
-            borderRadius: "10px",
-            height: "120px",
-            marginTop: "10px",
-            marginBottom: "10px",
-          }}
-          className="Card-dashboard"
-        >
-          <Card.Body>
-            <Card.Title
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                color: "#FFF7D6",
-                fontSize: "23px",
-                fontWeight: "700",
-              }}
-              className="card-title"
-            >
-              Solde jour de repos
-            </Card.Title>
-            <Card.Text
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                color: "#FFF7D6",
-                fontSize: "30px",
-                fontWeight: "bold",
-              }}
-            >
-              {user.DaysOffPerMounth} jour(s)
-            </Card.Text>
-          </Card.Body>
-        </Card>
-
-        {/* SALAIRE RESTANT POUR LE CURENT MONTH */}
-        <Card
-          style={{
-            width: "25%",
-            backgroundColor: "rgba(0, 126, 127, 0.75)",
-            borderRadius: "10px",
-            height: "120px",
-            marginTop: "10px",
-            marginBottom: "10px",
-          }}
-          className="Card-dashboard"
-        >
-          <Card.Body>
-            <Card.Title
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                color: "#FFF7D6",
-                fontSize: "23px",
-                fontWeight: "700",
-              }}
-              className="card-title"
-            >
-              Salaire restant pour ce mois
-            </Card.Title>
-            <Card.Text
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                color: "#FFF7D6",
-                fontSize: "30px",
-                fontWeight: "bold",
-              }}
-            >
-              {user.SalaireForCurrentMonth.toFixed(3)} dt
-            </Card.Text>
-          </Card.Body>
-        </Card>
-      </div>
+      ></div>
 
       {/* DIV MTA3 DEUXIEME LIGNE */}
 
@@ -348,7 +191,7 @@ const Dashboard = () => {
         >
           <Card
             style={{
-              width: "50%",
+              width: "100%",
               backgroundColor: "rgba(0, 126, 127, 0.75)",
               borderRadius: "10px",
               height: "500px",
@@ -370,7 +213,14 @@ const Dashboard = () => {
               >
                 Liste du personnel
               </Card.Title>
-              <div>
+
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexWrap: "wrap",
+                }}
+              >
                 {users.map((selectedUser) => (
                   <div
                     key={selectedUser._id}
@@ -380,6 +230,7 @@ const Dashboard = () => {
                       gap: "2%",
                       border: "1px solid #FFF7D6",
                       borderRadius: "8px",
+                      width: "95%",
                     }}
                     className="divMta3userlist"
                   >
@@ -387,7 +238,7 @@ const Dashboard = () => {
                       style={{
                         marginBottom: "10px",
                         padding: "5px",
-                        width: "25%",
+                        width: "20%",
                       }}
                       className="userspersonel"
                     >
@@ -442,55 +293,50 @@ const Dashboard = () => {
                         {selectedUser.DaysOffPerMounth}
                       </p>
                     </div>
-                    {user.Role === "Patron" ||
-                    user.Role === "gerant" ||
-                    user.Role === "finance" ? (
-                      <div
-                        style={{
-                          marginBottom: "10px",
-                          padding: "5px",
-                          width: "21%",
-                        }}
-                        className="soldeconge"
-                      >
-                        <p
-                          style={{
-                            margin: 0,
-                            fontWeight: "bold",
-                            fontSize: "20px",
-                            color: "#FFF7D6",
-                          }}
-                        >
-                          Salaire de ce mois
-                        </p>
-                        <p
-                          style={{
-                            margin: 0,
-                            color: "#FFF7D6",
-                            fontWeight: "500",
-                            fontSize: "20px",
-                          }}
-                        >
-                          {selectedUser.SalaireForCurrentMonth.toFixed(3)}
-                        </p>
-                      </div>
-                    ) : null}
 
                     <div
                       style={{
+                        marginBottom: "10px",
+                        padding: "5px",
                         width: "20%",
+                      }}
+                      className="soldeconge"
+                    >
+                      <p
+                        style={{
+                          margin: 0,
+                          fontWeight: "bold",
+                          fontSize: "20px",
+                          color: "#FFF7D6",
+                        }}
+                      >
+                        Salaire de ce mois
+                      </p>
+                      <p
+                        style={{
+                          margin: 0,
+                          color: "#FFF7D6",
+                          fontWeight: "500",
+                          fontSize: "20px",
+                        }}
+                      >
+                        {selectedUser.SalaireForCurrentMonth.toFixed(3)}
+                      </p>
+                    </div>
+
+                    <div
+                      style={{
+                        width: "40%",
                         display: "flex",
-                        alignContent: "center",
                         alignItems: "center",
-                        justifyContent: "center",
-                        marginLeft: "3%",
-                        gap: "6%",
+                        justifyContent: "space-evenly",
+                        gap: "1.5%",
                       }}
                       className="logos"
                     >
                       <div
                         className=" toggle-button-cover"
-                        style={{ marginTop: "8%" }}
+                        style={{ marginTop: "3%", width: "13%" }}
                       >
                         <div id="button-3" className=" button r">
                           <input
@@ -507,15 +353,21 @@ const Dashboard = () => {
                         </div>
                       </div>
 
-                      <div style={{ marginLeft: "2%" }}>
+                      <div
+                        style={{
+                          width: "13%",
+                          display: "flex",
+                          justifyContent: "center",
+                        }}
+                      >
                         <CertificatModal selectedUser={selectedUser} />
                       </div>
-
                       <div
                         style={{
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
+                          width: "13%",
                         }}
                       >
                         <Avance_Approuvement selectedUser={selectedUser} />
@@ -526,458 +378,187 @@ const Dashboard = () => {
               </div>
             </Card.Body>
           </Card>
-
-          <div style={{ width: "25%" }} className="secondligne">
-            {/* DEMANDE D'AVANCE SUR SALAIRE */}
-            <Card
-              style={{
-                width: "100%",
-                backgroundColor: "rgba(0, 126, 127, 0.75)",
-                borderRadius: "10px",
-                marginTop: "10px",
-                marginBottom: "10px",
-              }}
-              className="dashboard-Card"
-            >
-              <Card.Body
-                className="dashboard-Card"
-                style={{ display: "flex", flexDirection: "column" }}
-              >
-                <Card.Title
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    color: "#FFF7D6",
-                    fontSize: "30px",
-                    fontWeight: "700",
-                  }}
-                  className="dashcardtitle"
-                >
-                  Demande avance sur salaire
-                </Card.Title>
-                <Form>
-                  <Form.Group
-                    className=" mb-3"
-                    controlId="exampleForm.ControlInput1"
-                  >
-                    <Form.Label style={{ color: "#FFF7D6", fontSize: "25px" }}>
-                      Montant de l'avance
-                    </Form.Label>
-                    <Form.Control
-                      type="number"
-                      placeholder="Example 100 pour avoire 100dt"
-                      autoFocus
-                      value={Avance}
-                      onChange={(e) => setAvance(e.target.value)}
-                    />
-                  </Form.Group>
-                </Form>
-                <Button
-                  style={{ alignSelf: "center" }}
-                  className=" dashbtn BTN"
-                  onClick={handleAvance}
-                >
-                  {" "}
-                  Soumettre
-                </Button>
-              </Card.Body>
-            </Card>
-
-            {/* DEPOSER UN JUSTIFICATIF D'ABSCENCE */}
-            <Card
-              style={{
-                width: "100%",
-                backgroundColor: "rgba(0, 126, 127, 0.75)",
-                borderRadius: "10px",
-                marginBottom: "10px",
-                height: "46%",
-              }}
-              className="dashboard-Card"
-            >
-              <Card.Body
-                className="dashboard-Card"
-                style={{ display: "flex", flexDirection: "column" }}
-              >
-                <Card.Title
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    color: "#FFF7D6",
-                    fontSize: "28px",
-                    fontWeight: "700",
-                    textAlign: "center",
-                    marginBottom: "16%",
-                  }}
-                  className="dashcardtitle"
-                >
-                  Certificat Medical
-                </Card.Title>
-                <Form>
-                  <Form.Group
-                    className="mb-3"
-                    controlId="exampleForm.ControlInput1"
-                  >
-                    <Form.Control
-                      type="file"
-                      autoFocus
-                      onChange={(e) => handleImageChange(e)}
-                      accept="image/*"
-                    />
-                  </Form.Group>
-                </Form>
-                <Button
-                  style={{ alignSelf: "center" }}
-                  className=" dashbtn BTN"
-                  onClick={handleCertificat}
-                >
-                  {" "}
-                  Soumettre
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
-          <div style={{ width: "25%" }} className="secondligne">
-            {/* LISTE DES AVANCE POUR MOIS COURANT */}
-            <Card
-              style={{
-                width: "100%",
-                height: "46%",
-                backgroundColor: "rgba(0, 126, 127, 0.75)",
-                borderRadius: "10px",
-                marginTop: "10px",
-                marginBottom: "10px",
-                overflow: "auto",
-              }}
-              className="dashboard-Card"
-            >
-              <Card.Body style={{ display: "flex", flexDirection: "column" }}>
-                <Card.Title
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    color: "#FFF7D6",
-                    fontSize: "30px",
-                    fontWeight: "700",
-                  }}
-                  className="dashcardtitle"
-                >
-                  Mes avance pour ce mois
-                </Card.Title>
-                <div>
-                  {user.AvanceSurSalaire.map((avance) => (
-                    <div
-                      key={avance._id}
-                      style={{
-                        border: "solid 1px #FFF7D6",
-                        borderRadius: "7px",
-                        marginBottom: "1.5%",
-                        color: "#FFF7D6",
-                        display: "flex",
-                        justifyContent: "center",
-                        gap: "3%",
-                        fontWeight: "500",
-                        fontSize: "17px",
-                      }}
-                      className="divMta3userlist"
-                    >
-                      <div style={{ width: "30%" }}> {avance.date} </div>
-                      <div style={{ width: "30%" }}> {avance.Montant}dt </div>
-                      <div style={{ width: "30%" }}> {avance.etat} </div>
-                    </div>
-                  ))}
-                </div>
-              </Card.Body>
-            </Card>
-
-            {/* LISTE DES ABSCENCE POUR MOIS COURANT */}
-            <Card
-              style={{
-                width: "100%",
-                height: "46%",
-                backgroundColor: "rgba(0, 126, 127, 0.75)",
-                borderRadius: "10px",
-                marginBottom: "10px",
-                overflow: "auto",
-              }}
-              className="dashboard-Card"
-            >
-              <Card.Body>
-                <Card.Title
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    color: "#FFF7D6",
-                    fontSize: "28px",
-                    fontWeight: "700",
-                    textAlign: "center",
-                    marginBottom: "16%",
-                  }}
-                >
-                  Mes abscence pour ce mois
-                </Card.Title>
-                <div style={{ marginTop: "-15%" }}>
-                  {user.Absence.map((abscence) => (
-                    <div
-                      key={abscence._id}
-                      style={{
-                        border: "solid 1px #FFF7D6",
-                        borderRadius: "7px",
-                        marginBottom: "1.5%",
-                        color: "#FFF7D6",
-                        display: "flex",
-                        justifyContent: "center",
-                        gap: "3%",
-                        fontWeight: "500",
-                        fontSize: "17px",
-                      }}
-                      className="dashcardtitle divMta3userlist "
-                    >
-                      <div style={{ width: "25%" }}> {abscence.date} </div>
-                      <div style={{ width: "45%" }}>
-                        {" "}
-                        {abscence.justification !== "Absence non justifiée"
-                          ? "Absence justifiée"
-                          : abscence.justification}
-                      </div>
-                      <div style={{ width: "25%", marginRight: "-2%" }}>
-                        {" "}
-                        {abscence.etat}{" "}
-                      </div>
-                    </div>
-                  ))}{" "}
-                </div>
-              </Card.Body>
-            </Card>
-          </div>
         </div>
       ) : (
         <div
           className="div2ligne"
-          style={{ display: "flex", justifyContent: "center", gap: "1%" }}
+          style={{
+            width: "98%",
+            height: "auto",
+            display: "flex",
+            justifyContent: "center",
+            // alignItems: "center",
+            margin: "auto",
+            marginTop: "20px",
+            color: "#FFF7D6",
+            gap: "1%",
+          }}
         >
-          <div style={{ width: "47%" }} className="secondligne">
-            {/* DEMANDE D'AVANCE SUR SALAIRE */}
-            <Card
-              style={{
-                width: "100%",
-                backgroundColor: "rgba(0, 126, 127, 0.75)",
-                borderRadius: "10px",
-                marginTop: "10px",
-                marginBottom: "10px",
-              }}
-              className="dashboard-Card"
-            >
-              <Card.Body
-                className="dashboard-Card"
-                style={{ display: "flex", flexDirection: "column" }}
-              >
-                <Card.Title
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    color: "#FFF7D6",
-                    fontSize: "30px",
-                    fontWeight: "700",
-                  }}
-                  className="dashcardtitle"
-                >
-                  Demande avance sur salaire
-                </Card.Title>
-                <Form>
-                  <Form.Group
-                    className=" mb-3"
-                    controlId="exampleForm.ControlInput1"
-                  >
-                    <Form.Label style={{ color: "#FFF7D6", fontSize: "25px" }}>
-                      Montant de l'avance
-                    </Form.Label>
-                    <Form.Control
-                      type="number"
-                      placeholder="Example 100 pour avoire 100dt"
-                      autoFocus
-                      value={Avance}
-                      onChange={(e) => setAvance(e.target.value)}
-                    />
-                  </Form.Group>
-                </Form>
-                <Button
-                  style={{ alignSelf: "center" }}
-                  className=" dashbtn BTN"
-                  onClick={handleAvance}
-                >
-                  {" "}
-                  Soumettre
-                </Button>
-              </Card.Body>
-            </Card>
+          <Card
+            style={{
+              width: "100%",
+              backgroundColor: "rgba(0, 126, 127, 0.75)",
+              borderRadius: "10px",
+              height: "500px",
 
-            {/* DEPOSER UN JUSTIFICATIF D'ABSCENCE */}
-            <Card
-              style={{
-                width: "100%",
-                backgroundColor: "rgba(0, 126, 127, 0.75)",
-                borderRadius: "10px",
-                marginBottom: "10px",
-                height: "46%",
-              }}
-              className="dashboard-Card"
-            >
-              <Card.Body
-                className="dashboard-Card"
-                style={{ display: "flex", flexDirection: "column" }}
+              marginBottom: "10px",
+              overflow: "auto",
+            }}
+            className="personal-list"
+          >
+            <Card.Body>
+              <Card.Title
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  color: "#FFF7D6",
+                  fontSize: "30px",
+                  fontWeight: "700",
+                }}
               >
-                <Card.Title
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    color: "#FFF7D6",
-                    fontSize: "28px",
-                    fontWeight: "700",
-                    textAlign: "center",
-                    marginBottom: "16%",
-                  }}
-                  className="dashcardtitle"
-                >
-                  Certificat Medical
-                </Card.Title>
-                <Form>
-                  <Form.Group
-                    className="mb-3"
-                    controlId="exampleForm.ControlInput1"
+                Liste du personnel
+              </Card.Title>
+
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexWrap: "wrap",
+                }}
+              >
+                {users.map((selectedUser) => (
+                  <div
+                    key={selectedUser._id}
+                    style={{
+                      marginBottom: "10px",
+                      display: "flex",
+                      gap: "2%",
+                      border: "1px solid #FFF7D6",
+                      borderRadius: "8px",
+                      width: "95%",
+                    }}
+                    className="divMta3userlist"
                   >
-                    <Form.Control
-                      type="file"
-                      autoFocus
-                      onChange={(e) => handleImageChange(e)}
-                      accept="image/*"
-                      style={{ marginTop: "-12.5%" }}
-                    />
-                  </Form.Group>
-                </Form>
-                <Button
-                  style={{ alignSelf: "center", marginTop: "-5%" }}
-                  className=" dashbtn BTN"
-                  onClick={handleCertificat}
-                >
-                  {" "}
-                  Soumettre
-                </Button>
-              </Card.Body>
-            </Card>
-          </div>
-          <div style={{ width: "47%" }} className="secondligne">
-            {/* LISTE DES AVANCE POUR MOIS COURANT */}
-            <Card
-              style={{
-                width: "100%",
-                height: "46%",
-                backgroundColor: "rgba(0, 126, 127, 0.75)",
-                borderRadius: "10px",
-                marginTop: "10px",
-                marginBottom: "10px",
-                overflow: "auto",
-              }}
-              className="dashboard-Card"
-            >
-              <Card.Body style={{ display: "flex", flexDirection: "column" }}>
-                <Card.Title
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    color: "#FFF7D6",
-                    fontSize: "30px",
-                    fontWeight: "700",
-                  }}
-                  className="dashcardtitle"
-                >
-                  Mes avance pour ce mois
-                </Card.Title>
-                <div>
-                  {user.AvanceSurSalaire.map((avance) => (
                     <div
-                      key={avance._id}
                       style={{
-                        border: "solid 1px #FFF7D6",
-                        borderRadius: "7px",
-                        marginBottom: "1.5%",
-                        color: "#FFF7D6",
-                        display: "flex",
-                        justifyContent: "center",
-                        gap: "3%",
-                        fontWeight: "500",
-                        fontSize: "17px",
+                        marginBottom: "10px",
+                        padding: "5px",
+                        width: "31%",
                       }}
-                      className="divMta3userlist"
+                      className="userspersonel"
                     >
-                      <div style={{ width: "30%" }}> {avance.date} </div>
-                      <div style={{ width: "30%" }}> {avance.Montant}dt </div>
-                      <div style={{ width: "30%" }}> {avance.etat} </div>
+                      <p
+                        style={{
+                          margin: 0,
+                          fontWeight: "bold",
+                          fontSize: "20px",
+                          color: "#FFF7D6",
+                        }}
+                      >
+                        {selectedUser.Name}
+                      </p>
+                      <p1
+                        style={{
+                          margin: 0,
+                          color: "#FFF7D6",
+                          fontWeight: "500",
+                        }}
+                      >
+                        {selectedUser.Role === "user"
+                          ? "Simple Employer"
+                          : selectedUser.Role}
+                      </p1>
                     </div>
-                  ))}
-                </div>
-              </Card.Body>
-            </Card>
-
-            {/* LISTE DES ABSCENCE POUR MOIS COURANT */}
-            <Card
-              style={{
-                width: "100%",
-                height: "46%",
-                backgroundColor: "rgba(0, 126, 127, 0.75)",
-                borderRadius: "10px",
-                marginBottom: "10px",
-                overflow: "auto",
-              }}
-              className="dashboard-Card"
-            >
-              <Card.Body>
-                <Card.Title
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    color: "#FFF7D6",
-                    fontSize: "28px",
-                    fontWeight: "700",
-                    textAlign: "center",
-                    marginBottom: "16%",
-                  }}
-                >
-                  Certificat Medical
-                </Card.Title>
-                <div style={{ marginTop: "-15%" }}>
-                  {user.Absence.map((abscence) => (
                     <div
-                      key={abscence._id}
                       style={{
-                        border: "solid 1px #FFF7D6",
-                        borderRadius: "7px",
-                        marginBottom: "1.5%",
-                        color: "#FFF7D6",
-                        display: "flex",
-                        justifyContent: "center",
-                        gap: "3%",
-                        fontWeight: "500",
-                        fontSize: "17px",
+                        marginBottom: "10px",
+                        padding: "5px",
+                        width: "31%",
                       }}
-                      className="dashcardtitle"
+                      className="soldeconge"
                     >
-                      <div style={{ width: "25%" }}> {abscence.date} </div>
-                      <div style={{ width: "45%" }}>
-                        {" "}
-                        {abscence.justification !== "Absence non justifiée"
-                          ? "Absence justifiée"
-                          : abscence.justification}
+                      <p
+                        style={{
+                          margin: 0,
+                          fontWeight: "bold",
+                          fontSize: "20px",
+                          color: "#FFF7D6",
+                        }}
+                      >
+                        Solde de congé
+                      </p>
+                      <p
+                        style={{
+                          margin: 0,
+                          color: "#FFF7D6",
+                          fontWeight: "500",
+                          fontSize: "20px",
+                        }}
+                      >
+                        {selectedUser.DaysOffPerMounth}
+                      </p>
+                    </div>
+
+                    <div
+                      style={{
+                        width: "31%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-evenly",
+                        gap: "1.5%",
+                      }}
+                      className="logos"
+                    >
+                      <div
+                        style={{ display: "flex", justifyContent: "center" }}
+                      >
+                        <div
+                          className=" toggle-button-cover"
+                          style={{ marginTop: "3%", width: "13%" }}
+                        >
+                          <div id="button-3" className=" button r">
+                            <input
+                              className="checkbox"
+                              type="checkbox"
+                              defaultChecked={selectedUser.isAbscent}
+                              disabled={
+                                selectedUser.isAbscent || currentHrs < 9
+                              }
+                              onClick={() => {
+                                handleShow(selectedUser);
+                              }}
+                            />
+                            <div className="knobs" />
+                            <div className="layer" />
+                          </div>
+                        </div>
                       </div>
-                      <div style={{ width: "25%", marginRight: "-2%" }}>
-                        {" "}
-                        {abscence.etat}{" "}
+
+                      <div
+                        style={{
+                          width: "13%",
+                          display: "flex",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <CertificatModal selectedUser={selectedUser} />
+                      </div>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          width: "13%",
+                        }}
+                      >
+                        <Avance_Approuvement selectedUser={selectedUser} />
                       </div>
                     </div>
-                  ))}{" "}
-                </div>
-              </Card.Body>
-            </Card>
-          </div>
+                  </div>
+                ))}
+              </div>
+            </Card.Body>
+          </Card>
         </div>
       )}
 

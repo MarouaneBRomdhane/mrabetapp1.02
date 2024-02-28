@@ -1,11 +1,18 @@
 import React, { useState } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Form, Modal } from "react-bootstrap";
 import { TbBrandCashapp } from "react-icons/tb";
 import { updateUser } from "../Redux/Actions/Users_Action";
 import { useDispatch } from "react-redux";
 
 const Avance_Approuvement = ({ selectedUser }) => {
   const [showAvanceModal, setShowAvanceModal] = useState(false);
+  const [Avance, setAvance] = useState("");
+
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const FullDate = [day, month, year].join("/");
 
   const dispatch = useDispatch();
 
@@ -16,46 +23,27 @@ const Avance_Approuvement = ({ selectedUser }) => {
     setShowAvanceModal(false);
   };
 
-  const handleAvanceApprouvée = () => {
-    const updatedUser = {
-      ...selectedUser,
-      SalaireForCurrentMonth:
-        selectedUser.SalaireForCurrentMonth -
-        selectedUser.AvanceSurSalaire.reduce(
-          (acc, e) => (e.etat === "attente" ? acc + e.Montant : acc + 0),
-          0
-        ),
+  const handleAvance = () => {
+    const avanceObject = { Montant: Avance, date: FullDate, etat: "attente" };
 
-      AvanceSurSalaire: selectedUser.AvanceSurSalaire.map((avance) =>
-        avance.etat === "attente" ? { ...avance, etat: "approuvée" } : avance
-      ),
+    const updatedUserAvance = {
+      ...selectedUser,
+      AvanceSurSalaire: [...selectedUser.AvanceSurSalaire, avanceObject],
+      SalaireForCurrentMonth: selectedUser.SalaireForCurrentMonth - Avance,
     };
 
-    dispatch(updateUser(selectedUser._id, updatedUser));
-    handleAvanceModalClose();
-  };
-
-  const handleAvanceRefuser = () => {
-    const updatedUser = {
-      ...selectedUser,
-      AvanceSurSalaire: selectedUser.AvanceSurSalaire.map((avance) =>
-        avance.etat === "attente" ? { ...avance, etat: "refusée" } : avance
-      ),
-    };
-
-    dispatch(updateUser(selectedUser._id, updatedUser));
+    dispatch(updateUser(selectedUser._id, updatedUserAvance));
+    setAvance("");
     handleAvanceModalClose();
   };
 
   return (
     <>
-      {selectedUser.AvanceSurSalaire.some(
-        (avance) => avance.etat === "attente"
-      ) ? (
-        <TbBrandCashapp color="red" size={45} onClick={handleAvanceModalShow} />
-      ) : (
-        <TbBrandCashapp color="#FFF7D6" size={45} />
-      )}
+      <TbBrandCashapp
+        color="#FFF7D6"
+        size={45}
+        onClick={handleAvanceModalShow}
+      />
       <Modal show={showAvanceModal} onHide={handleAvanceModalClose}>
         <Modal.Header
           closeButton
@@ -64,22 +52,29 @@ const Avance_Approuvement = ({ selectedUser }) => {
           <Modal.Title>Demande D'avance sur Salaire pour</Modal.Title>
         </Modal.Header>
         <Modal.Body style={{ backgroundColor: "rgba(0, 126, 127, 0.75)" }}>
-          {/* Display the list of avance with etat === 'attente' */}
-          {selectedUser.AvanceSurSalaire.filter(
-            (avance) => avance.etat === "attente"
-          ).map((avance) => (
-            <div key={avance._id}>
-              <p>Montant: {avance.Montant}</p>
-              <p>Date: {avance.date}</p>
-            </div>
-          ))}
+          <Form>
+            <Form.Group className=" mb-3" controlId="exampleForm.ControlInput1">
+              <Form.Label style={{ color: "#FFF7D6", fontSize: "25px" }}>
+                Montant de l'avance
+              </Form.Label>
+              <Form.Control
+                type="number"
+                placeholder="Example 100 pour avoire 100dt"
+                autoFocus
+                value={Avance}
+                onChange={(e) => setAvance(e.target.value)}
+              />
+            </Form.Group>
+          </Form>
         </Modal.Body>
         <Modal.Footer style={{ backgroundColor: "rgba(0, 126, 127, 0.75)" }}>
-          <Button variant="danger" onClick={handleAvanceRefuser}>
-            Refuser
-          </Button>
-          <Button className="BTN" onClick={handleAvanceApprouvée}>
-            Approuver
+          <Button
+            style={{ alignSelf: "center" }}
+            className=" dashbtn BTN"
+            onClick={handleAvance}
+          >
+            {" "}
+            Soumettre
           </Button>
         </Modal.Footer>
       </Modal>

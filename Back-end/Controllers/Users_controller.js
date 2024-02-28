@@ -17,7 +17,7 @@ exports.Register = async (req, res) => {
   } = req.body;
   try {
     const found = await Users.findOne({ Name });
-    console.log(found);
+
     if (found) {
       res.status(400).send({ msg: "The user you want to add aleready exist" });
     } else {

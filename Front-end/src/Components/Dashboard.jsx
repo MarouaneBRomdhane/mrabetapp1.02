@@ -713,7 +713,7 @@ const Dashboard = () => {
                     marginBottom: "16%",
                   }}
                 >
-                  Certificat Medical
+                  Mes abscence pour ce mois
                 </Card.Title>
                 <div style={{ marginTop: "-15%" }}>
                   {user.Absence.map((abscence) => (
@@ -730,7 +730,7 @@ const Dashboard = () => {
                         fontWeight: "500",
                         fontSize: "17px",
                       }}
-                      className="dashcardtitle"
+                      className="dashcardtitle divMta3userlist "
                     >
                       <div style={{ width: "25%" }}> {abscence.date} </div>
                       <div style={{ width: "45%" }}>

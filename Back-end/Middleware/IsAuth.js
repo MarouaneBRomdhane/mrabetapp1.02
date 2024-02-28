@@ -2,7 +2,6 @@ const users = require("../Models/Users_model");
 const jwt = require("jsonwebtoken");
 exports.IsAuth = async (req, res, next) => {
   const Token = req.header("Token");
-  console.log(Token);
   try {
     const secretKey = "160592050199271021";
     const Verify = jwt.verify(Token, secretKey); //when we use jwt we always have to call the secretKey with the token

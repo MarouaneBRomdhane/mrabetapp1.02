@@ -379,7 +379,7 @@ const Dashboard = () => {
             </Card.Body>
           </Card>
         </div>
-      ) : (
+      ) : user.Role === "commercial" ? (
         <div
           className="div2ligne"
           style={{
@@ -560,7 +560,7 @@ const Dashboard = () => {
             </Card.Body>
           </Card>
         </div>
-      )}
+      ) : null}
 
       {/* ABSCENCE GETSTION MODAL */}
       <Modal show={show} onHide={handleClose}>

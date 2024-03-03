@@ -235,7 +235,7 @@ const Modal1 = ({ caisse }) => {
           </div>
 
           {/* FIelds to add single TPE statments */}
-          <Row className="tpe-row" style={{ marginTop: "20px" }}>
+          <Row id="modalTpe" className="tpe-row" style={{ marginTop: "20px" }}>
             <h5 style={{ color: "#FFF7D6", fontSize: "25px" }}>TPE</h5>
           </Row>
           <Row style={{ marginTop: "-10px" }}>
@@ -344,7 +344,7 @@ const Modal1 = ({ caisse }) => {
           </div>
 
           {/* Uploader les image scanner des ticket de caisse */}
-          <Row className="tpe-row">
+          <Row id="ticketcaissemodal" className="tpe-row">
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label
                 style={{

@@ -85,160 +85,172 @@ const Plateformes = () => {
   return (
     <>
       {/* Card mta3 totale des Achat Cuisine */}
-      <Card
+      <div
         style={{
-          width: "22%",
+          display: "flex",
+          justifyContent: "center",
+          gap: "2%",
+          flexWrap: "wrap",
+          marginBottom: "30px",
 
-          backgroundColor: "rgba(0, 126, 127, 0.75)",
-          borderRadius: "10px",
-          height: "150px",
-          marginTop: "10px",
-          marginBottom: "20px",
+          width: "100%",
         }}
-        className="Card"
       >
-        <Card.Body>
-          <Card.Title
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              color: "#FFF7D6",
-              fontSize: "35px",
-              fontWeight: "700",
-            }}
-          >
-            Cuisine
-          </Card.Title>
-          <Card.Text
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              color: "#FFF7D6",
-              fontSize: "30px",
-              fontWeight: "bold",
-            }}
-          >
-            {TotalCuisineProducts.toFixed(3)}
-          </Card.Text>
-        </Card.Body>
-      </Card>
+        <Card
+          style={{
+            width: "22%",
 
-      {/* Card mta3 totale des Achat Pizzeria */}
-      <Card
-        style={{
-          width: "22%",
+            backgroundColor: "rgba(0, 126, 127, 0.75)",
+            borderRadius: "10px",
+            height: "150px",
+            marginTop: "10px",
+            marginBottom: "20px",
+          }}
+          className="Card"
+        >
+          <Card.Body>
+            <Card.Title
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                color: "#FFF7D6",
+                fontSize: "35px",
+                fontWeight: "700",
+              }}
+            >
+              Cuisine
+            </Card.Title>
+            <Card.Text
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                color: "#FFF7D6",
+                fontSize: "30px",
+                fontWeight: "bold",
+              }}
+            >
+              {TotalCuisineProducts.toFixed(3)}
+            </Card.Text>
+          </Card.Body>
+        </Card>
 
-          backgroundColor: "rgba(0, 126, 127, 0.75)",
-          borderRadius: "10px",
-          height: "150px",
-          marginTop: "10px",
-          marginBottom: "20px",
-        }}
-        className="Card"
-      >
-        <Card.Body>
-          <Card.Title
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              color: "#FFF7D6",
-              fontSize: "35px",
-              fontWeight: "700",
-            }}
-          >
-            Pizzeria
-          </Card.Title>
-          <Card.Text
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              color: "#FFF7D6",
-              fontSize: "30px",
-              fontWeight: "bold",
-            }}
-          >
-            {TotalPizzeriaProducts.toFixed(3)}
-          </Card.Text>
-        </Card.Body>
-      </Card>
+        {/* Card mta3 totale des Achat Pizzeria */}
+        <Card
+          style={{
+            width: "22%",
 
-      {/* Card mta3 totale des Achat Pâtisserie */}
-      <Card
-        style={{
-          width: "22%",
+            backgroundColor: "rgba(0, 126, 127, 0.75)",
+            borderRadius: "10px",
+            height: "150px",
+            marginTop: "10px",
+            marginBottom: "20px",
+          }}
+          className="Card"
+        >
+          <Card.Body>
+            <Card.Title
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                color: "#FFF7D6",
+                fontSize: "35px",
+                fontWeight: "700",
+              }}
+            >
+              Pizzeria
+            </Card.Title>
+            <Card.Text
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                color: "#FFF7D6",
+                fontSize: "30px",
+                fontWeight: "bold",
+              }}
+            >
+              {TotalPizzeriaProducts.toFixed(3)}
+            </Card.Text>
+          </Card.Body>
+        </Card>
 
-          backgroundColor: "rgba(0, 126, 127, 0.75)",
-          borderRadius: "10px",
-          height: "150px",
-          marginTop: "10px",
-          marginBottom: "20px",
-        }}
-        className="Card"
-      >
-        <Card.Body>
-          <Card.Title
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              color: "#FFF7D6",
-              fontSize: "35px",
-              fontWeight: "700",
-            }}
-          >
-            Pâtisserie
-          </Card.Title>
-          <Card.Text
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              color: "#FFF7D6",
-              fontSize: "30px",
-              fontWeight: "bold",
-            }}
-          >
-            {TotalPâtisserieProducts.toFixed(3)}
-          </Card.Text>
-        </Card.Body>
-      </Card>
+        {/* Card mta3 totale des Achat Pâtisserie */}
+        <Card
+          style={{
+            width: "22%",
 
-      {/* Card mta3 totale des Achat BAR */}
-      <Card
-        style={{
-          width: "22%",
+            backgroundColor: "rgba(0, 126, 127, 0.75)",
+            borderRadius: "10px",
+            height: "150px",
+            marginTop: "10px",
+            marginBottom: "20px",
+          }}
+          className="Card"
+        >
+          <Card.Body>
+            <Card.Title
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                color: "#FFF7D6",
+                fontSize: "35px",
+                fontWeight: "700",
+              }}
+            >
+              Pâtisserie
+            </Card.Title>
+            <Card.Text
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                color: "#FFF7D6",
+                fontSize: "30px",
+                fontWeight: "bold",
+              }}
+            >
+              {TotalPâtisserieProducts.toFixed(3)}
+            </Card.Text>
+          </Card.Body>
+        </Card>
 
-          backgroundColor: "rgba(0, 126, 127, 0.75)",
-          borderRadius: "10px",
-          height: "150px",
-          marginTop: "10px",
-          marginBottom: "20px",
-        }}
-        className="Card"
-      >
-        <Card.Body>
-          <Card.Title
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              color: "#FFF7D6",
-              fontSize: "35px",
-              fontWeight: "700",
-            }}
-          >
-            Bar
-          </Card.Title>
-          <Card.Text
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              color: "#FFF7D6",
-              fontSize: "30px",
-              fontWeight: "bold",
-            }}
-          >
-            {TotalBarProducts.toFixed(3)}
-          </Card.Text>
-        </Card.Body>
-      </Card>
+        {/* Card mta3 totale des Achat BAR */}
+        <Card
+          style={{
+            width: "22%",
+
+            backgroundColor: "rgba(0, 126, 127, 0.75)",
+            borderRadius: "10px",
+            height: "150px",
+            marginTop: "10px",
+            marginBottom: "20px",
+          }}
+          className="Card"
+        >
+          <Card.Body>
+            <Card.Title
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                color: "#FFF7D6",
+                fontSize: "35px",
+                fontWeight: "700",
+              }}
+            >
+              Bar
+            </Card.Title>
+            <Card.Text
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                color: "#FFF7D6",
+                fontSize: "30px",
+                fontWeight: "bold",
+              }}
+            >
+              {TotalBarProducts.toFixed(3)}
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      </div>
     </>
   );
 };

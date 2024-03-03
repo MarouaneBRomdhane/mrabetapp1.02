@@ -1,3 +1,9 @@
+@media only screen and (max-width: 1440px) {
+  #thelist {
+    height: 400px !important;
+    width: 80% !important;
+  }
+}
 @media only screen and (max-width: 768px) {
   .NavBar-BackGround {
     flex-direction: column;
@@ -116,24 +122,59 @@
     overflow: hidden;
   }
   #button-3 .knobs {
-    width: 24px;
-    height: 24px;
+    width: 24px !important;
+    height: 24px !important;
   }
   #button-3 {
     margin-top: 10px;
   }
+  .divtextmta3lesproduit {
+    font-size: 18px !important;
+  }
+  .divtextmta3lesproduit2 {
+    font-size: 18px !important;
+  }
+  .textmt3lesproduit {
+    width: auto !important;
+  }
+
+  .listedesachats {
+    font-size: 25px !important;
+  }
+
+  .divMta3lesProduit {
+    width: auto !important;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+  #cargap {
+    gap: 1% !important;
+  }
+  #thelist {
+    height: 300px !important;
+    width: 80% !important;
+  }
+  #eyeicon {
+    margin-top: 15px !important;
+  }
+  #dollaricon {
+    margin-top: 15px !important;
+  }
 }
 
 @media only screen and (max-width: 435px) {
-  .Card {
-    width: 50px !important;
-    margin: 5px auto;
-  }
   .Card h1 {
     font-size: 18px;
   }
   .Card a {
     font-size: 14px;
+  }
+  .historycards {
+    width: 100% !important;
+    flex-wrap: wrap !important;
+  }
+  .Accordionh {
+    font: size 12px !important;
   }
 }
 
@@ -144,24 +185,36 @@
   .logoutImpr {
     margin-right: 73px;
   }
+  #cargap {
+    gap: 1% !important;
+  }
+  #thelist {
+    height: 300px !important;
+    width: 80% !important;
+  }
 }
 
 @media (max-width: 435px) {
-  .divtextmta3lesproduit h1 {
-    font-size: 15px;
+  .divtextmta3lesproduit {
+    font-size: 15px !important;
   }
-  .divtextmta3lesproduit2 h1 {
-    font-size: 15px;
+  .divtextmta3lesproduit2 {
+    font-size: 15px !important;
   }
   .textmt3lesproduit {
-    width: auto;
+    width: auto !important;
   }
 
   .listedesachats {
     font-size: 22px !important;
   }
   .logoutImpr {
-    margin-right: 50px;
+    margin-right: 50px !important;
+  }
+  .divMta3lesProduit {
+    width: auto !important;
+    display: flex !important;
+    justify-content: space-between !important;
   }
 }
 
@@ -205,11 +258,21 @@
     font-size: 20px !important;
   }
   .card {
-    width: 70% !important;
+    width: 40% !important;
     margin-bottom: 20px;
   }
-  .historycards {
-    display: block !important;
+
+  #modalTpe {
+    margin-top: 1px !important;
+  }
+  #ticketcaissemodal {
+    margin-top: 1px !important;
+  }
+  #cargap {
+    gap: 1% !important;
+  }
+  .caisseEventHistory {
+    margin: auto !important;
   }
   .modal-body {
     padding: 10px !important;
@@ -228,21 +291,49 @@
     margin-top: -80px !important;
   }
   #liste-des-achats {
-    width: 100% !important;
+    width: 400% !important;
     margin-left: 2% !important;
   }
   .achatliste {
-    display: block !important;
+    width: 100% !important;
   }
   #carousel {
     margin-left: 28% !important;
   }
   #thelist {
     height: 300px !important;
+    width: 80% !important;
+  }
+
+  #historyListAchat {
+    height: 500px !important;
+    width: 80% !important;
   }
 }
-/* dashbordmedia */
 @media screen and (max-width: 435px) {
+  .Cardlogin {
+    width: 90% !important;
+    margin-top: 100px !important;
+  }
+
+  .Cardlogin .Card.Title {
+    font-size: 2rem !important;
+  }
+
+  .Cardlogin .Form.Label {
+    font-size: 20px !important;
+  }
+
+  .Cardlogin .Form.Control {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+  .BTN-LOGIN {
+    width: 120px !important;
+  }
+  .BTN-LOGIN h5 {
+    font-size: 15px !important;
+  }
   .greeting {
     height: auto !important;
     width: auto !important;
@@ -275,21 +366,27 @@
   .Card-dashboard {
     height: 210px !important;
   }
+  #dollaricon {
+    width: 1% !important;
+  }
+
+  #eyeicon {
+    width: 1% !important;
+  }
   .personal-list {
     width: auto !important;
   }
-  .soldeconge p {
+  .soldeconge {
     font-size: 16px !important;
   }
   .logos {
     display: block !important;
   }
+
   .secondligne {
     margin-left: 15% !important;
   }
-  .leslogo {
-    font-size: 10px;
-  }
+
   #addproduct {
     font-size: 70% !important;
     margin-bottom: 20px !important;
@@ -306,11 +403,11 @@
     overflow: hidden;
   }
   #button-3 .knobs {
-    width: 24px;
-    height: 24px;
+    width: 13px !important;
+    height: 13px !important;
   }
   #button-3 {
-    margin-top: 10px;
+    margin-top: 10px !important;
   }
 
   #buttonlogin {
@@ -327,7 +424,6 @@
     font-size: 29px !important;
   }
 }
-/* dashbordmedia */
 @media screen and (max-width: 768px) {
   .greeting {
     height: auto !important;
@@ -381,12 +477,20 @@
     margin: -20px auto 0 auto;
     overflow: hidden;
   }
-  #button-3 .knobs {
-    width: 24px;
-    height: 24px;
-  }
+
   #button-3 {
     margin-top: 10px;
+  }
+  .logos {
+    display: block !important;
+    margin-left: 63px !important;
+    font-size: 1;
+  }
+  #eyeicon {
+    width: 1% !important;
+  }
+  #dollaricon {
+    width: 1% !important;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -414,6 +518,8 @@
 }
 @media only screen and (max-width: 768px) {
   .Accordion.Header {
-    font-size: 11px !important; /* Adjust the font size as needed */
+    font-size: 11px !important;
+  }
+  @media only screen and (max-width: 435px) {
   }
 }

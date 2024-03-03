@@ -92,24 +92,17 @@ const History = () => {
                 </Row>
               </div>
               <div
-                className="historycards"
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  gap: "2%",
-                }}
+                id="cargap"
+                className="mx-auto items-center mt-4 h-96 flex justify-center gap-x-9"
               >
                 {e.caisses1.map((caisse) => (
                   <Card
                     key={caisse._id}
                     style={{
-                      width: "22%",
-                      marginTop: "30px",
                       backgroundColor: "rgba(0, 126, 127, 0.75)",
-                      borderRadius: "10px",
-                      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                      width: "22%",
                     }}
-                    className="Card"
+                    className="Card rounded-lg shadow-md "
                   >
                     <Card.Body>
                       <Card.Title
@@ -308,11 +301,13 @@ const History = () => {
                 ))}
               </div>{" "}
               <div
+                className="caisseEventHistory"
                 style={{
                   width: "100%",
                   display: "flex",
                   justifyContent: "center",
                   gap: "2%",
+                  position: "absolute",
                 }}
               >
                 {/* CAISSE EVENT HISTORIQUE */}
@@ -613,6 +608,7 @@ const History = () => {
                 }}
               >
                 <Card
+                  id="historyListAchat"
                   style={{
                     width: "40%",
                     height: "900px",

@@ -276,7 +276,7 @@ function Visualizer() {
           height: "150px",
           marginBottom: "20px",
         }}
-        // className="Card"
+        className="Card"
       >
         <Card.Body>
           <Card.Title

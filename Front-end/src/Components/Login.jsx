@@ -37,7 +37,7 @@ const Login = () => {
               display: "flex",
               justifyContent: "center",
               color: "#FFF7D6",
-              fontSize: "3rem",
+              fontSize: "30px",
             }}
           >
             Connexion
@@ -116,8 +116,13 @@ const Login = () => {
               {e.msg}
             </span>
           ))}
-          <Button className="BTN-LOGIN" id="buttonlogin" onClick={handleLogin}>
-            <h6>Se connecter</h6>
+          <Button
+            style={{ width: "140px", marginLeft: "300px" }}
+            className="BTN-LOGIN"
+            id="buttonlogin"
+            onClick={handleLogin}
+          >
+            <h5>Se connecter</h5>
           </Button>
         </Card.Body>
       </Card>

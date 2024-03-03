@@ -33,8 +33,6 @@ const Dashboard = () => {
   const [Justification, setJustification] = useState("");
   const [Deduire, setDeduire] = useState("");
   const [selectedUser, setSelectedUser] = useState(null);
-  const [Avance, setAvance] = useState("");
-  const [Certificat, setCertificat] = useState("");
 
   const handleClose = () => setShow(false);
   const handleShow = (selectedUser) => {
@@ -86,49 +84,6 @@ const Dashboard = () => {
     setSelectedUser(null);
   };
 
-  const handleAvance = () => {
-    const avanceObject = { Montant: Avance, date: FullDate, etat: "attente" };
-
-    const updatedUserAvance = {
-      ...user,
-      AvanceSurSalaire: [...user.AvanceSurSalaire, avanceObject],
-    };
-
-    dispatch(updateUser(user._id, updatedUserAvance));
-
-    setAvance("");
-  };
-
-  const handleCertificat = () => {
-    const absenceObject = {
-      date: FullDate,
-      justification: Certificat,
-      etat: "attente",
-    };
-    const updatedUserAbsence = {
-      ...user,
-      Absence: [...user.Absence, absenceObject],
-    };
-    dispatch(updateUser(user._id, updatedUserAbsence));
-    setCertificat("");
-    alert("Certificat médical déposé avec succès.!!");
-  };
-
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
-
-    if (file) {
-      const reader = new FileReader();
-
-      reader.onload = (e) => {
-        const dataUri = e.target.result;
-        setCertificat(dataUri);
-        console.log(dataUri);
-      };
-
-      reader.readAsDataURL(file);
-    }
-  };
   return (
     <>
       <Navbar />
@@ -154,7 +109,7 @@ const Dashboard = () => {
             ? `Bonjour ${user.Name}`
             : currentHrs >= 15 && currentHrs < 20
             ? `Bonne après-midi ${user.Name}`
-            : `Bonsoir ${user.Name}`}
+            : ` Bonsoir ${user.Name}`}
         </h1>
       </div>
       <div
@@ -300,9 +255,9 @@ const Dashboard = () => {
                         padding: "5px",
                         width: "20%",
                       }}
-                      className="soldeconge"
                     >
                       <p
+                        className="soldeconge"
                         style={{
                           margin: 0,
                           fontWeight: "bold",
@@ -313,6 +268,7 @@ const Dashboard = () => {
                         Salaire de ce mois
                       </p>
                       <p
+                        className="soldeconge"
                         style={{
                           margin: 0,
                           color: "#FFF7D6",
@@ -348,6 +304,7 @@ const Dashboard = () => {
                               handleShow(selectedUser);
                             }}
                           />
+
                           <div className="knobs" />
                           <div className="layer" />
                         </div>
@@ -360,7 +317,9 @@ const Dashboard = () => {
                           justifyContent: "center",
                         }}
                       >
-                        <CertificatModal selectedUser={selectedUser} />
+                        <div id="eyeicon">
+                          <CertificatModal selectedUser={selectedUser} />
+                        </div>
                       </div>
                       <div
                         style={{
@@ -370,7 +329,10 @@ const Dashboard = () => {
                           width: "13%",
                         }}
                       >
-                        <Avance_Approuvement selectedUser={selectedUser} />
+                        {" "}
+                        <div id="dollaricon">
+                          <Avance_Approuvement selectedUser={selectedUser} />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -379,7 +341,7 @@ const Dashboard = () => {
             </Card.Body>
           </Card>
         </div>
-      ) : user.Role === "commercial" ? (
+      ) : (
         <div
           className="div2ligne"
           style={{
@@ -560,7 +522,7 @@ const Dashboard = () => {
             </Card.Body>
           </Card>
         </div>
-      ) : null}
+      )}
 
       {/* ABSCENCE GETSTION MODAL */}
       <Modal show={show} onHide={handleClose}>

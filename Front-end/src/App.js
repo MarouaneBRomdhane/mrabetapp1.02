@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCurrent } from "./Redux/Actions/Users_Action";
 import History from "./Components/History";
 import Dashboard from "./Components/Dashboard";
+import Add_user from "./Components/Add_user";
 
 function App() {
   const dispatch = useDispatch();
@@ -36,6 +37,7 @@ function App() {
             <Route path="/Economa" element={<Economa />} />
             <Route path="/history" element={<History />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/adduser" element={<Add_user />} />
           </>
         )}
       </Routes>

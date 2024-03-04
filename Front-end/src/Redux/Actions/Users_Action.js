@@ -10,11 +10,13 @@ import { alertError } from "../ActionsTypes/ActiontypeError";
 
 export const Login_action = (data, Navigate) => async (dispatch) => {
   try {
-    await axios.post("/api/user/Login", data)
-      .then((res) => {console.log("loginResponse",res.data); dispatch({ type: LOGIN, payload: res.data })});
+    await axios.post("/api/user/Login", data).then((res) => {
+      console.log("loginResponse", res.data);
+      dispatch({ type: LOGIN, payload: res.data });
+    });
     Navigate("/dashboard");
   } catch (error) {
-    console.error("Login error:", error); 
+    console.error("Login error:", error);
     error.response.data.errors.forEach((e) => {
       dispatch(alertError(e.msg));
     });
@@ -55,5 +57,15 @@ export const updateUser = (id, data) => async (dispatch) => {
     dispatch(getCurrent());
   } catch (error) {
     console.error(error);
+  }
+};
+
+export const Adduser = (data) => async (dispatch) => {
+  try {
+    await axios
+      .post("/api/user/Register", data)
+      .then((res) => dispatch(getUsers()));
+  } catch (error) {
+    console.log(error);
   }
 };

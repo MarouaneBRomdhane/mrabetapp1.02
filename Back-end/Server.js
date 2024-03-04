@@ -112,7 +112,7 @@ const addHistory = async () => {
   }
 };
 
-setInterval(addHistory, 10000);
+setInterval(addHistory, 3600000);
 
 app.listen(port, console.log("Server is runing at port 8000"));
 

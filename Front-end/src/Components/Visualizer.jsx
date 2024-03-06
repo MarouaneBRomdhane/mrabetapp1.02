@@ -220,7 +220,9 @@ function Visualizer() {
             }}
           >
             {" "}
-            <h1 id="totalRecetteValue">{Liquide[0]?.LiquideDisponible}</h1>
+            <h1 id="totalRecetteValue">
+              {Liquide[0]?.LiquideDisponible.toFixed(3)}
+            </h1>
           </Card.Text>
         </Card.Body>
       </Card>

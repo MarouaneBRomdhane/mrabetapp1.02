@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
 import { useSelector, useDispatch } from "react-redux";
 import { getProducts } from "../Redux/Actions/Achat_Action";
-import { Col, Row, Carousel, Modal } from "react-bootstrap";
+import { Row, Modal } from "react-bootstrap";
 import Visualizer from "./Visualizer";
 import AddProduct from "./AddProduct";
 import EconomaProduct from "./EconomaProduct";
 import Navbar from "./Navbar";
 import Plateformes from "./Plateformes";
 import { getCurrent } from "../Redux/Actions/Users_Action";
+import { FaFileInvoiceDollar, FaRegTrashCan } from "react-icons/fa6";
+import { FaRegEdit } from "react-icons/fa";
+import EditProduct from "./EditProduct";
 
 function Economa() {
   const dispatch = useDispatch();
@@ -73,60 +76,87 @@ function Economa() {
         <Visualizer />
       </div>
       <Row className="achatliste" style={{ display: "flex", width: "100%" }}>
-        <Col id="liste-des-achats" className="col-6">
-          <div
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "row",
+            gap: "2%",
+          }}
+        >
+          <Card
+            id="thelist"
             style={{
-              display: "flex",
-              justifyContent: "center",
-              flexDirection: "row",
-              gap: "2%",
+              width: "95%",
+              height: "900px",
+              overflow: "auto",
+
+              backgroundColor: "rgba(0, 126, 127, 0.75)",
+              borderRadius: "10px",
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
             }}
+            className="Card"
           >
-            <Card
-              id="thelist"
-              style={{
-                width: "95%",
-                height: "900px",
-                overflow: "auto",
+            <Card.Body>
+              <Card.Title
+                className="listedesachats"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  color: "#FFF7D6",
+                  fontSize: "3rem",
+                  marginBottom: "25px",
+                }}
+              >
+                Liste des achats
+                <br />
+                Total: {totalSum}
+              </Card.Title>
 
-                backgroundColor: "rgba(0, 126, 127, 0.75)",
-                borderRadius: "10px",
-                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-              }}
-              className="Card"
-            >
-              <Card.Body>
-                <Card.Title
-                  className="listedesachats"
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    color: "#FFF7D6",
-                    fontSize: "3rem",
-                    marginBottom: "25px",
-                  }}
-                >
-                  Liste des achats
-                  <br />
-                  Total: {totalSum}
-                </Card.Title>
-
-                {user.Role === "Patron" ||
-                user.Role === "finance" ||
-                user.Role === "gerant" ||
-                user.Role === "achat" ? (
-                  <AddProduct />
-                ) : null}
-                <div className="achatliste" style={{ marginTop: "25px" }}>
-                  {products.map((product) => (
+              {user.Role === "Patron" ||
+              user.Role === "finance" ||
+              user.Role === "gerant" ||
+              user.Role === "achat" ? (
+                <AddProduct />
+              ) : null}
+              <div className="achatliste" style={{ marginTop: "25px" }}>
+                {products.map((product) => (
+                  <div
+                    style={{
+                      border: "4px solid #FFF7D6",
+                      borderRadius: "10px",
+                      margin: "1%",
+                      backgroundColor: "rgba(0, 126, 127, 0.75)",
+                      display: "flex",
+                      justifyContent: "space-around",
+                      alignItems: "center",
+                    }}
+                  >
                     <EconomaProduct product={product} key={product._id} />
-                  ))}
-                </div>
-              </Card.Body>
-            </Card>
-          </div>
-        </Col>
-        <Col id="carousel" className="col-6">
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-around",
+                        height: "150px",
+                      }}
+                    >
+                      <FaFileInvoiceDollar
+                        color="#FFF7D6"
+                        size={35}
+                        onClick={() => handleImageClick(product.Facture)}
+                      />
+                      <EditProduct product={product} key={product._id} />
+                      <FaRegTrashCan color="#FFF7D6" size={35} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Card.Body>
+          </Card>
+        </div>
+
+        {/* <Col id="carousel" className="col-6">
           <div style={{ marginTop: "10px" }}>
             <Carousel>
               {products.map((product) => (
@@ -150,7 +180,7 @@ function Economa() {
               ))}
             </Carousel>
           </div>
-        </Col>
+        </Col> */}
       </Row>
 
       <Modal

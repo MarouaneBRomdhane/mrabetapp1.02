@@ -3,7 +3,7 @@ import React from "react";
 function EconomaProduct({ product }) {
   console.log(product);
   return (
-    <>
+    <div style={{ width: "90%" }}>
       {product.Product.map((product) => (
         <div
           className="divMta3lesProduit"
@@ -11,7 +11,7 @@ function EconomaProduct({ product }) {
           style={{
             display: "flex",
             flexDirection: "row",
-            marginBottom: "10px",
+            margin: "1%",
             paddingBottom: "auto",
             border: "1px solid #FFF7D6",
             gap: "5px",
@@ -93,7 +93,7 @@ function EconomaProduct({ product }) {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 }
 

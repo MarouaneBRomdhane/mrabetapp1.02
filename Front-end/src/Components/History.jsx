@@ -93,14 +93,19 @@ const History = () => {
               </div>
               <div
                 id="cargap"
-                className="mx-auto items-center mt-4 h-96 flex justify-center gap-x-9"
+                className="mx-0 my-auto mt-4 flex justify-center gap-9"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  gap: "2%",
+                }}
               >
                 {e.caisses1.map((caisse) => (
                   <Card
                     key={caisse._id}
                     style={{
                       backgroundColor: "rgba(0, 126, 127, 0.75)",
-                      width: "22%",
+                      width: "30%",
                     }}
                     className="Card rounded-lg shadow-md "
                   >
@@ -307,7 +312,8 @@ const History = () => {
                   display: "flex",
                   justifyContent: "center",
                   gap: "2%",
-                  position: "absolute",
+                  // position: "absolute",
+                  // top: "0",
                 }}
               >
                 {/* CAISSE EVENT HISTORIQUE */}
@@ -611,7 +617,7 @@ const History = () => {
                   id="historyListAchat"
                   style={{
                     width: "40%",
-                    height: "900px",
+                    height: "500px",
                     overflow: "auto",
                     marginTop: "30px",
                     backgroundColor: "rgba(0, 126, 127, 0.75)",

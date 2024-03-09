@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
-import { addProducts } from "../Redux/Actions/Achat_Action";
+import { addProducts, updateProducts } from "../Redux/Actions/Achat_Action";
 import { getLiquide, updateLiquide } from "../Redux/Actions/Liquide_action";
 import { Row } from "react-bootstrap";
 import { FaRegEdit } from "react-icons/fa";
@@ -14,7 +14,6 @@ const EditProduct = ({ product }) => {
   const [Name, setName] = useState("");
   const [Price, setPrice] = useState("");
   const [Quantity, setQuantity] = useState("");
-  const [Facture, setFacture] = useState("");
   const [Affectation, setAffectation] = useState("");
   const [Unity, setUnity] = useState("");
   const [Pâtisserie, setPâtisserie] = useState("");
@@ -38,10 +37,6 @@ const EditProduct = ({ product }) => {
   const addSingleProduct = () => {
     // Condition t'obligi el user bech i3abi les state el kol
 
-    if (!Name || !Price || !Quantity) {
-      alert("Please fill in all the fields.");
-      return;
-    }
     if (
       Number(Cuisine) + Number(Pizzeria) + Number(Pâtisserie) + Number(Bar) !==
         Quantity &&
@@ -88,43 +83,15 @@ const EditProduct = ({ product }) => {
     setPâtisserie("");
   };
 
-  const handleAddProduct = () => {
-    const newProduct = {
-      Facture: Facture,
-      Product: temporaryProduct,
-    };
-
-    dispatch(addProducts(newProduct));
-
-    dispatch(
-      updateLiquide(Liquide[0]._id, {
-        LiquideDisponible:
-          Number(Liquide[0].LiquideDisponible) -
-          temporaryProduct.reduce((acc, e) => acc + Number(e.Price), 0),
-      })
-    );
+  const handleEditProduct = () => {
+    dispatch(updateProducts(product._id, { Product: [temporaryProduct] }));
     setName("");
     setQuantity("");
     setPrice("");
-    setFacture("");
-    setTemporaryProduct([]);
-    handleClose();
-  };
-
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
-
-    if (file) {
-      const reader = new FileReader();
-
-      reader.onload = (e) => {
-        const dataUri = e.target.result;
-        setFacture(dataUri);
-        console.log(dataUri);
-      };
-
-      reader.readAsDataURL(file);
-    }
+    setCuisine("");
+    setBar("");
+    setPizzeria("");
+    setPâtisserie("");
   };
 
   return (
@@ -329,7 +296,7 @@ const EditProduct = ({ product }) => {
 
         <Modal.Footer style={{ backgroundColor: "rgba(0, 126, 127, 0.75)" }}>
           {/* boutton pour valider la journée */}
-          <Button className="BTN-CHQTPE" onClick={handleAddProduct}>
+          <Button className="BTN-CHQTPE" onClick={handleEditProduct}>
             Sauvegarder
           </Button>
         </Modal.Footer>

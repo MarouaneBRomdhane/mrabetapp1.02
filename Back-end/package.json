@@ -17,7 +17,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.1.0",
     "nodemon": "^3.0.3",
-    "pdf-creator-node": "^2.3.5"
+    "pdf-creator-node": "^2.3.5",
+    "sharp": "^0.33.2"
   },
   "description": ""
 }

@@ -22,6 +22,14 @@
   background-color: rgba(0, 126, 127, 0.75);
 }
 
+.editProducticons {
+  transition: all 300ms;
+  transform: scale(1);
+}
+.editProducticons:hover {
+  transform: scale(1.2);
+}
+
 /* Style lel bouton login */
 .BTN-LOGIN {
   margin-top: 10px;

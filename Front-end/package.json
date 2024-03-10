@@ -2,7 +2,7 @@
   "name": "mrabet-finance1.01",
   "version": "0.1.0",
   "private": true,
-  "proxy":"http://localhost:8000",
+  "proxy": "http://localhost:8000",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
@@ -24,6 +24,7 @@
     "react-scripts": "5.0.1",
     "redux": "^5.0.1",
     "redux-thunk": "^3.1.0",
+    "sharp": "^0.33.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

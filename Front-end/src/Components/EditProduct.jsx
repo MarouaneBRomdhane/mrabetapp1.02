@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
-import { addProducts, updateProducts } from "../Redux/Actions/Achat_Action";
+import { updateProducts } from "../Redux/Actions/Achat_Action";
 import { getLiquide, updateLiquide } from "../Redux/Actions/Liquide_action";
 import { Row } from "react-bootstrap";
 import { FaRegEdit } from "react-icons/fa";
@@ -84,7 +84,10 @@ const EditProduct = ({ product }) => {
   };
 
   const handleEditProduct = () => {
-    dispatch(updateProducts(product._id, { Product: [temporaryProduct] }));
+    const updatedProduct = {
+      Product: temporaryProduct,
+    };
+    dispatch(updateProducts(product._id, updatedProduct));
     setName("");
     setQuantity("");
     setPrice("");
@@ -92,12 +95,18 @@ const EditProduct = ({ product }) => {
     setBar("");
     setPizzeria("");
     setPâtisserie("");
+    handleClose();
   };
 
   return (
     <div>
       {/* button to open modal */}
-      <FaRegEdit color="#FFF7D6" size={35} onClick={handleShow} />
+      <FaRegEdit
+        color="#FFF7D6"
+        size={35}
+        onClick={handleShow}
+        className="editProducticons"
+      />
 
       {/* MODAL */}
       <Modal show={show} onHide={handleClose}>

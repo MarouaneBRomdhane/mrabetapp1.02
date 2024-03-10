@@ -15,7 +15,6 @@ export default function Navbar() {
   const BankCaisses = useSelector((state) => state.BankCaisses.BankCaisses);
   const EventCaisses = useSelector((state) => state.caissesEvent.caisses);
   const products = useSelector((state) => state.Products.products);
-  console.log(products);
 
   const handlePrint = () => {
     const totalRecetteValue =

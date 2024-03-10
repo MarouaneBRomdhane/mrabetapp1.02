@@ -1,7 +1,6 @@
 import React from "react";
 
 function EconomaProduct({ product }) {
-  console.log(product);
   return (
     <div style={{ width: "90%" }}>
       {product.Product.map((product) => (

@@ -4,11 +4,15 @@ import { getHistory } from "../Redux/Actions/History_Action";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import { Accordion, Card, Row } from "react-bootstrap";
+import { Accordion, Card, Modal, Row } from "react-bootstrap";
 import VisualizerHistory from "./VisualizerHistory";
 import EconomaProduct from "./EconomaProduct";
 import Navbar from "./Navbar";
 import PlateformesHistory from "./PlateformesHistory";
+import { FaFileInvoiceDollar } from "react-icons/fa";
+import { FaRegTrashCan } from "react-icons/fa6";
+import { deleteProduct } from "../Redux/Actions/Achat_Action";
+import EditProduct from "./EditProduct";
 
 const History = () => {
   const [date, setDate] = useState("");
@@ -19,7 +23,15 @@ const History = () => {
   }, [dispatch]);
 
   const histories = useSelector((state) => state.history.histories);
-  console.log(histories);
+
+  const [showModal, setShowModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  // Function to handle image click and show modal
+  const handleImageClick = (imageURL) => {
+    setSelectedImage(imageURL);
+    setShowModal(true);
+  };
 
   return (
     <>
@@ -616,7 +628,7 @@ const History = () => {
                 <Card
                   id="historyListAchat"
                   style={{
-                    width: "40%",
+                    width: "92%",
                     height: "500px",
                     overflow: "auto",
                     marginTop: "30px",
@@ -645,7 +657,43 @@ const History = () => {
 
                     <div style={{ marginTop: "25px" }}>
                       {e.AchatProduct.map((product) => (
-                        <EconomaProduct product={product} key={product._id} />
+                        <div
+                          style={{
+                            border: "4px solid #FFF7D6",
+                            borderRadius: "10px",
+                            margin: "1%",
+                            backgroundColor: "rgba(0, 126, 127, 0.75)",
+                            display: "flex",
+                            justifyContent: "space-around",
+                            alignItems: "center",
+                          }}
+                        >
+                          <EconomaProduct product={product} key={product._id} />
+                          <div
+                            style={{
+                              display: "flex",
+                              flexDirection: "column",
+                              justifyContent: "space-around",
+                              height: "150px",
+                            }}
+                          >
+                            <FaFileInvoiceDollar
+                              color="#FFF7D6"
+                              size={35}
+                              onClick={() => handleImageClick(product.Facture)}
+                              className="editProducticons"
+                            />
+                            <EditProduct product={product} key={product._id} />
+                            <FaRegTrashCan
+                              color="#FFF7D6"
+                              size={35}
+                              onClick={() =>
+                                dispatch(deleteProduct(product._id))
+                              }
+                              className="editProducticons"
+                            />
+                          </div>
+                        </div>
                       ))}
                     </div>
                   </Card.Body>
@@ -654,6 +702,24 @@ const History = () => {
             </div>
           ))}
       </div>
+      <Modal
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        size="xl"
+        dialogClassName="modal-90w"
+      >
+        <Modal.Body>
+          <img
+            src={selectedImage}
+            alt="Selected "
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+            }}
+          />
+        </Modal.Body>
+      </Modal>
     </>
   );
 };

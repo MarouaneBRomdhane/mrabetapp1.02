@@ -89,7 +89,8 @@ function VisualizerHistory({
             {totalCaisses1 +
               (isNaN(caissesEvent.Recette[0]?.montant)
                 ? 0
-                : caissesEvent.Recette[0]?.montant)}
+                : caissesEvent.Recette[0]?.montant
+              ).toFixed(3)}
           </Card.Text>
         </Card.Body>
       </Card>
@@ -127,7 +128,7 @@ function VisualizerHistory({
               fontWeight: "bold",
             }}
           >
-            {LiquideDisponible}
+            {LiquideDisponible.toFixed(3)}
           </Card.Text>
         </Card.Body>
       </Card>
@@ -165,7 +166,7 @@ function VisualizerHistory({
               fontWeight: "bold",
             }}
           >
-            {totalCheques}
+            {totalCheques.toFixed(3)}
           </Card.Text>
         </Card.Body>
       </Card>
@@ -203,7 +204,7 @@ function VisualizerHistory({
               fontWeight: "bold",
             }}
           >
-            {totalTpe}
+            {totalTpe.toFixed(3)}
           </Card.Text>
         </Card.Body>
       </Card>

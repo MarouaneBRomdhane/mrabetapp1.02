@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
 import { useSelector, useDispatch } from "react-redux";
-import { getProducts } from "../Redux/Actions/Achat_Action";
+import { deleteProduct, getProducts } from "../Redux/Actions/Achat_Action";
 import { Row, Modal } from "react-bootstrap";
 import Visualizer from "./Visualizer";
 import AddProduct from "./AddProduct";
@@ -10,7 +10,6 @@ import Navbar from "./Navbar";
 import Plateformes from "./Plateformes";
 import { getCurrent } from "../Redux/Actions/Users_Action";
 import { FaFileInvoiceDollar, FaRegTrashCan } from "react-icons/fa6";
-import { FaRegEdit } from "react-icons/fa";
 import EditProduct from "./EditProduct";
 
 function Economa() {
@@ -145,9 +144,15 @@ function Economa() {
                         color="#FFF7D6"
                         size={35}
                         onClick={() => handleImageClick(product.Facture)}
+                        className="editProducticons"
                       />
                       <EditProduct product={product} key={product._id} />
-                      <FaRegTrashCan color="#FFF7D6" size={35} />
+                      <FaRegTrashCan
+                        color="#FFF7D6"
+                        size={35}
+                        onClick={() => dispatch(deleteProduct(product._id))}
+                        className="editProducticons"
+                      />
                     </div>
                   </div>
                 ))}

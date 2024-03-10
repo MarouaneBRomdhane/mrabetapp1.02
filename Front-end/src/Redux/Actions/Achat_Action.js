@@ -31,3 +31,14 @@ export const updateProducts = (id, data) => async (dispatch) => {
     console.log(error);
   }
 };
+
+export const deleteProduct = (id) => async (dispatch) => {
+  try {
+    await fetch("/api/achat/delete/" + id, {
+      method: "DELETE",
+      headers: { "content-type": "application/json" },
+    }).then((res) => dispatch(getProducts()));
+  } catch (error) {
+    console.log(error);
+  }
+};

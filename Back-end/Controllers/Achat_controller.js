@@ -29,9 +29,8 @@ exports.updateProduct = async (req, res) => {
   const id = req.params.id;
 
   try {
-    console.log("Updating product with ID:", id);
     const product = await Products.findByIdAndUpdate(id, { $set: req.body });
-    console.log("Product updated:", product);
+
     res.status(200).send({
       msg: "Produit mise à jour avec succees",
       product_updated: product,
@@ -39,5 +38,19 @@ exports.updateProduct = async (req, res) => {
   } catch (error) {
     console.error("Error updating product:", error);
     res.status(500).send({ msg: "Echec de l update" });
+  }
+};
+
+exports.deleteProduct = async (req, res) => {
+  const id = req.params.id;
+  try {
+    const delete_product = await Products.findByIdAndDelete(id);
+    res.status(200).send({
+      msg: "product has benn deleted",
+      product_deleted: delete_product,
+    });
+  } catch (error) {
+    res.status(500).send({ msg: "failed to delete product" });
+    console.error("Error deleting product:", error);
   }
 };

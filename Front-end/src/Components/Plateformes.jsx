@@ -11,7 +11,6 @@ const Plateformes = () => {
   }, [dispatch]);
 
   const products = useSelector((state) => state.Products.products);
-  console.log(products);
 
   const TotalCuisineProducts = products.reduce(
     (acc, e) =>

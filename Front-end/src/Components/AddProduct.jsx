@@ -116,15 +116,26 @@ const AddProduct = () => {
       const reader = new FileReader();
 
       reader.onload = (e) => {
-        const dataUri = e.target.result;
-        setFacture(dataUri);
-        console.log(dataUri);
+        const img = new Image();
+        img.src = e.target.result;
+
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          canvas.width = 500;
+          canvas.height = 400;
+
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0, 500, 400);
+
+          const dataUri = canvas.toDataURL();
+          setFacture(dataUri);
+          console.log(dataUri);
+        };
       };
 
       reader.readAsDataURL(file);
     }
   };
-
   return (
     <div>
       {/* button to open modal */}
